@@ -2,6 +2,7 @@
 
 Projeto realizado em grupo no curso da trybe.
 O objetivo era fazer um e-commerce utilizando a api do mercado livre.
+
 ## Conteudos praticados:
 - Rotas com BrowserRouter,switch, link.
 - Prop Drilling 
@@ -16,4 +17,4 @@ O objetivo era fazer um e-commerce utilizando a api do mercado livre.
 
 ## Para visualizar o projeto funcionando, clique no link abaixo !
 
-https://shopping-cart-online-store.vercel.app/
+https://wallet-seven-chi.vercel.app/
