@@ -17,7 +17,7 @@ The goal was to make an e-commerce using the Mercado Livre API.
 
 ## To view the project in action, click on the link below !
 
-https://wallet-seven-chi.vercel.app/
+https://shopping-cart-online-store.vercel.app/
 
 
 ------------------------------------------------------------------------------------------------------------------
@@ -42,4 +42,4 @@ O objetivo era fazer um e-commerce utilizando a api do mercado livre.
 
 ## Para visualizar o projeto funcionando, clique no link abaixo !
 
-https://wallet-seven-chi.vercel.app/
+https://shopping-cart-online-store.vercel.app/
