@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Products from './Products';
 
+const INITIAL_STATE = {
+  total: 0,
+  countItens: 1,
+  buttonDisable: false,
+}
 export default function ProductsInCart({
   title,
   thumbnail,
@@ -13,11 +18,7 @@ export default function ProductsInCart({
   countI,
 
 }) {
-  const [productsInCart, setProductsInCart] = useState({
-    total: 0,
-    countItens: 1,
-    buttonDisable: false,
-  })
+  const [productsInCart, setProductsInCart] = useState(INITIAL_STATE)
   const { countItens, buttonDisable } = productsInCart;
 
 
@@ -31,12 +32,13 @@ export default function ProductsInCart({
 
     if (value === '+') {
       setProductsInCart(((prevState) => ({
+        ...prevState,
         countItens: prevState.countItens + 1,
       })), updateButtonDisable);
     }
     if (value === '-' && countItens > 1) {
       setProductsInCart((prevState) => ({
-
+        ...prevState,
         countItens: prevState.countItens - 1,
       }));
     }
@@ -44,14 +46,18 @@ export default function ProductsInCart({
 
   const updateButtonDisable = () => {
     if (countItens >= quantity) {
-      setProductsInCart({ buttonDisable: true });
+      setProductsInCart((prevState) => ({
+        ...prevState,
+        buttonDisable: true
+      }));
     }
   }
 
   const updateState = () => {
-    setProductsInCart({
+    setProductsInCart((prevState) => ({
+      ...prevState,
       countItens: countI,
-    });
+    }));
   }
 
 

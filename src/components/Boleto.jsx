@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 const SERIAL_NUMBER_BOLETO = 999999999909999999
 const RANDOM_NUMER = Math.floor(Math.random() * SERIAL_NUMBER_BOLETO) + SERIAL_NUMBER_BOLETO
 
-export default function Boleto ({
+export default function Boleto({
   nome,
   email,
   cpf,
@@ -13,119 +13,119 @@ export default function Boleto ({
   totalValue,
   quantidadeItens
 }) {
-  const [codeBoleto,setCodeBoleto]= useState({codeBoleto: ''})
+  const [codeBoleto, setCodeBoleto] = useState({ codeBoleto: '' })
   useEffect(() => {
     generateBoletoCod()
 
   }, [])
-  
- const generateBoletoCod = () => setCodeBoleto({codeBoleto: RANDOM_NUMER})
-  
 
-     
-    return (
-      <>
-        <form>
-
-          <input
-            id="cheackoutName"
-            type="text"
-            name="nome"
-            data-testid="checkout-fullname"
-            onChange={handleChange}
-            value={nome}
-            placeholder='Nome Completo'
-          />
+  const generateBoletoCod = () => setCodeBoleto({ codeBoleto: RANDOM_NUMER })
 
 
-          <input
-            id="cheackoutEmail"
-            type="email"
-            name="email"
-            data-testid="checkout-email"
-            onChange={handleChange}
-            value={email}
-            placeholder='Email'
 
-          />
+  return (
+    <>
+      <form>
 
-
-          <input
-            id="cheackoutCPF"
-            type="text"
-            name="cpf"
-            data-testid="checkout-cpf"
-            onChange={handleChange}
-            value={cpf}
-            placeholder='CPF'
-
-          />
+        <input
+          id="cheackoutName"
+          type="text"
+          name="nome"
+          data-testid="checkout-fullname"
+          onChange={handleChange}
+          value={nome}
+          placeholder='Nome Completo'
+        />
 
 
-          <input
-            id="cheackoutTelefone"
-            type="tel"
-            name="telefone"
-            data-testid="checkout-phone"
-            onChange={handleChange}
-            value={telefone}
-            placeholder='Telefone para Contato'
-          />
+        <input
+          id="cheackoutEmail"
+          type="email"
+          name="email"
+          data-testid="checkout-email"
+          onChange={handleChange}
+          value={email}
+          placeholder='Email'
+
+        />
 
 
-          <input
-            id="cheackoutCEP"
-            type="text"
-            name="cep"
-            data-testid="checkout-cep"
-            onChange={handleChange}
-            value={cep}
-            placeholder='CEP'
+        <input
+          id="cheackoutCPF"
+          type="text"
+          name="cpf"
+          data-testid="checkout-cpf"
+          onChange={handleChange}
+          value={cpf}
+          placeholder='CPF'
 
-          />
+        />
 
 
-          <input
-            id="cheackoutEndereço"
-            type="text"
-            name="endereco"
-            data-testid="checkout-address"
-            onChange={handleChange}
-            value={endereco}
-            placeholder='Endereço'
+        <input
+          id="cheackoutTelefone"
+          type="tel"
+          name="telefone"
+          data-testid="checkout-phone"
+          onChange={handleChange}
+          value={telefone}
+          placeholder='Telefone para Contato'
+        />
 
-          />
 
-          <button onClick={(e)=>e.preventDefault()} className='buy-button' type='submit'>Finalizar</button>
-        </form>
-        <div className='boleto'>
-          <div className='boleto-titulo'>
-            <span> shoppingCart</span>
-          </div>
-          <div className='boleto-infos'>
-            <span>numero de itens:{quantidadeItens}</span>
-          </div>
-          <div className='boleto-valores'>
-            <span>(10%) valor minimo:{(totalValue * 0.10).toFixed(2)} R$ </span>
-            <span>(0) Descontos: 0</span>
-            <span>(100%) valor total:{totalValue} R$</span>
+        <input
+          id="cheackoutCEP"
+          type="text"
+          name="cep"
+          data-testid="checkout-cep"
+          onChange={handleChange}
+          value={cep}
+          placeholder='CEP'
 
-          </div>
-          <div className='boleto-barras'>
+        />
 
-            <img src='https://www.tag-id.com.br/wp-content/uploads/2019/06/barcode-306926_640-e1560291480556.png' />
-          </div>
-          <div className='boleto-usuario'>
-            <span>{nome ? nome.toUpperCase() : 'NOME'}</span>
-            <span>{cpf ? cpf : 'CPF'}</span>
-            <span>{endereco ? endereco : 'ENDEREÇO'}</span>
-            <span>{cep ? cep : 'CEP'}</span>
-          </div>
-          <div className='boleto-codigo'>
-            {codeBoleto}
-          </div>
+
+        <input
+          id="cheackoutEndereço"
+          type="text"
+          name="endereco"
+          data-testid="checkout-address"
+          onChange={handleChange}
+          value={endereco}
+          placeholder='Endereço'
+
+        />
+
+        <button onClick={(e) => e.preventDefault()} className='buy-button' type='submit'>Finalizar</button>
+      </form>
+      <div className='boleto'>
+        <div className='boleto-titulo'>
+          <span> shoppingCart</span>
         </div>
-      </>
-    )
-  
+        <div className='boleto-infos'>
+          <span>numero de itens:{quantidadeItens}</span>
+        </div>
+        <div className='boleto-valores'>
+          <span>(10%) valor minimo:{(totalValue * 0.10).toFixed(2)} R$ </span>
+          <span>(0) Descontos: 0</span>
+          <span>(100%) valor total:{totalValue} R$</span>
+
+        </div>
+        <div className='boleto-barras'>
+
+          <img src='https://www.tag-id.com.br/wp-content/uploads/2019/06/barcode-306926_640-e1560291480556.png' />
+        </div>
+        <div className='boleto-usuario'>
+          <span>{nome ? nome.toUpperCase() : 'NOME'}</span>
+          <span>{cpf ? cpf : 'CPF'}</span>
+          <span>{endereco ? endereco : 'ENDEREÇO'}</span>
+          <span>{cep ? cep : 'CEP'}</span>
+        </div>
+        <div className='boleto-codigo'>
+          {codeBoleto}
+        </div>
+      </div>
+    </>
+  )
+
 }
