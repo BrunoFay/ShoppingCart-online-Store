@@ -1,32 +1,28 @@
-import React, { Component } from 'react'
-const RANDOM_NUMER = Math.floor(Math.random() * 999999999909999999) + 999999999909999999
-export default class Boleto extends Component {
-  constructor() {
-    super()
-    this.state = {
-      codeBoleto: ''
-    }
-  }
-  componentDidMount() {
-    this.generateBoletoCod()
-  }
-  generateBoletoCod = () => this.setState({
-    codeBoleto: RANDOM_NUMER,
-  })
+import React, { useState, useEffect } from 'react'
+const SERIAL_NUMBER_BOLETO = 999999999909999999
+const RANDOM_NUMER = Math.floor(Math.random() * SERIAL_NUMBER_BOLETO) + SERIAL_NUMBER_BOLETO
 
-  render() {
-    const {
-      nome,
-      email,
-      cpf,
-      telefone,
-      cep,
-      endereco,
-      handleChange,
-      totalValue,
-      quantidadeItens
-    } = this.props;
-    const { codeBoleto } = this.state
+export default function Boleto ({
+  nome,
+  email,
+  cpf,
+  telefone,
+  cep,
+  endereco,
+  handleChange,
+  totalValue,
+  quantidadeItens
+}) {
+  const [codeBoleto,setCodeBoleto]= useState({codeBoleto: ''})
+  useEffect(() => {
+    generateBoletoCod()
+
+  }, [])
+  
+ const generateBoletoCod = () => setCodeBoleto({codeBoleto: RANDOM_NUMER})
+  
+
+     
     return (
       <>
         <form>
@@ -131,5 +127,5 @@ export default class Boleto extends Component {
         </div>
       </>
     )
-  }
+  
 }

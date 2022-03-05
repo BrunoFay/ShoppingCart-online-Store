@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class CreditCard extends Component {
-  render() {
-    const {
-      nome,
-      cep,
-      endereco,
-      cardNumber,
-      validade,
-      handleChange,
-      cvv
-    } = this.props;
+export default function CreditCard ({
+  nome,
+  cep,
+  endereco,
+  cardNumber,
+  validade,
+  handleChange,
+  cvv
+}) {
+    
   
     return (
       <>
@@ -103,5 +102,5 @@ export default class CreditCard extends Component {
             </div>
       </>
     )
-  }
+  
 }

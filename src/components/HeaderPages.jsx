@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 
-export default class HeaderPages extends Component {
-  render() {
-    const {cart}=this.props
+export default function HeaderPages ({cart}) {
     return (
       <nav className='nav-home-link'>
       <h1 id='title-out-main'>shoppingCart</h1>
@@ -21,5 +19,5 @@ export default class HeaderPages extends Component {
       
     </nav>
     )
-  }
+  
 }

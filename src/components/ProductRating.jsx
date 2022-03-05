@@ -1,33 +1,29 @@
-import React from 'react';
+import React,{useState} from 'react';
 
-class ProductRating extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      comment: '',
-      rating: 1,
-    };
-  }
+export default function ProductRating () {
+  const [ratingState,setRatingState]= useState({
+    email: '',
+    comment: '',
+    rating: 1,
+  })
+  const { email, rating, comment } = ratingState;
 
-  handleChange = ({ target }) => {
+  const handleChange = ({ target }) => {
     const { name, value } = target;
-    this.setState({
+    setRatingState({
       [name]: value,
     });
   }
 
-  handleClick = (event) => {
+  const handleClick = (event) => {
     event.preventDefault();
-    this.setState({
+    setRatingState({
       email: '',
       comment: '',
       rating: 1,
     });
   }
 
-  render() {
-    const { email, rating, comment } = this.state;
     return (
       <div>
         <form className='rating'>
@@ -38,7 +34,7 @@ class ProductRating extends React.Component {
               type="text"
               name="email"
               value={ email }
-              onChange={ this.handleChange }
+              onChange={ handleChange }
             />
           </label>
           <label htmlFor="rating">
@@ -49,7 +45,7 @@ class ProductRating extends React.Component {
               min="1"
               max="5"
               value={ rating }
-              onChange={ this.handleChange }
+              onChange={ handleChange }
             />
           </label>
           <label htmlFor="comment">
@@ -59,15 +55,15 @@ class ProductRating extends React.Component {
               data-testid="product-detail-evaluation"
               name="comment"
               value={ comment }
-              onChange={ this.handleChange }
+              onChange={ handleChange }
             />
-          <button type="button" onClick={ this.handleClick }>
+          <button type="button" onClick={ handleClick }>
             Enviar
           </button>
         </form>
       </div>
     );
   }
-}
 
-export default ProductRating;
+
+
