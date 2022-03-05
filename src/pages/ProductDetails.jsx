@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import AddCartButtonDetails from '../components/AddCartButtonDetails';
 import ProductRating from '../components/ProductRating';
 import Footer from '../components/Footer';
@@ -13,7 +12,8 @@ export default function ProductDetails({ location: { state } }) {
     price,
     available_quantity: quantity,
     thumbnail,
-    shipping: { free_shipping: freeShipping } } = state;
+    shipping: { free_shipping: freeShipping
+    } } = state;
   return (
     <div className='details-pag'>
       <HeaderPages />
