@@ -4,11 +4,11 @@ Project carried out in a group in the Trybe course.
 The goal was to make an e-commerce using the Mercado Livre API.
 
 ## Lessons learned:
-- Rotas com BrowserRouter,switch, link.
-- Prop Drilling 
-- Consumo de api
-- Metodologia ágil
-- Css grid/flexbox
+- BrowserRouter, switch, link.
+- Prop Drilling
+- API consumption
+- Agile methodology
+- css grid/flexbox
 
 
 ## To view a video of the project, click on the image below !
