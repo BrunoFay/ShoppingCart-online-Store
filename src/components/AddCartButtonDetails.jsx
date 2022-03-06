@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  addLocalStorage,
+  loadLocalStorage
+} from '../localStorage'
 
 export default function AddCartButtonDetails({ result }) {
 
   const handleClick = () => {
     let arrayItenstoLS = [];
-    const getLocal = localStorage.getItem('shoppingCart');
-    if (getLocal) {
-      arrayItenstoLS = (JSON.parse(localStorage.getItem('shoppingCart')));
-    }
+     arrayItenstoLS = loadLocalStorage('shoppingCart');
     arrayItenstoLS.push(result);
-    localStorage.setItem('shoppingCart', JSON.stringify(arrayItenstoLS));
+    addLocalStorage('shoppingCart', arrayItenstoLS);
   }
 
   return (
