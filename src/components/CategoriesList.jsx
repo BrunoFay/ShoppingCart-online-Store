@@ -19,16 +19,17 @@ export default function CategoriesList({ labelCLick }) {
 
   return (
     <article className='nav-categories'>
-      <ul className="container__overlay">
+      <ul className='container__overlay'>
         {categories
           .map((category) => (
             <li>
               <Link
-                type="button"
+                type='button'
                 key={category.id}
                 id={category.id}
-                data-testid="category"
+                data-testid='category'
                 onClick={labelCLick}
+                to=''
               >
                 {category.name}
               </Link>

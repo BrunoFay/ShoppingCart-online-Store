@@ -1,0 +1,14 @@
+entidade checkout:
+1-compartilhar as infos para o boleto e cartão de credito
+2- estado das infos e função handlechange 
+
+analisando: 
+1- local storage
+2-valor total das compras
+3-criar um arquivo separado para importar as srcs das imagens
+4-array cart presente no checkout e no products in cart
+5- numero de itens no carrinho esta no header pages
+
+entidade home :
+1- requisições a api
+2- elementos no componente products

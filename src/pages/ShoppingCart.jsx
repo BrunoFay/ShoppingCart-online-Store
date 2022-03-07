@@ -10,7 +10,7 @@ import {
 } from '../localStorage'
 
 const INITIAL_STATE = {
-  cart: null,
+  cart: [],
 }
 export default function ShoppingCart() {
   const [cartItens, setCartItens] = useState(INITIAL_STATE)
@@ -33,9 +33,9 @@ export default function ShoppingCart() {
   }
   const removeCartLocalstorage = () => {
     removeLocalStorage('shoppingCart')
-    setCartItens({ cart: '' })
+    setCartItens({ cart: [] })
   };
-
+  /* fix products in cart logical */
   return (
     <>
       <HeaderPages cart={cart} />

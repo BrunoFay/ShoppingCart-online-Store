@@ -14,6 +14,7 @@ export default function ProductDetails({ location: { state } }) {
     thumbnail,
     shipping: { free_shipping: freeShipping
     } } = state;
+    /* make components */
   return (
     <div className='details-pag'>
       <HeaderPages />

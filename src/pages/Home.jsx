@@ -23,11 +23,13 @@ export default function Home() {
 
 
   const handleClick = async () => {
+    setSearchStates(prevState => ({ ...prevState, loading: true }))
     await getProductsFromCategoryAndQuery('', searchInput)
       .then((data) => setSearchStates(prevState => ({
         ...prevState,
         searchResult: data.results,
         buttonClicked: true,
+        loading: false
       })));
   }
 
@@ -64,22 +66,25 @@ export default function Home() {
     }
   }
 
-  const loadingCheck = loading ? <Loading /> : searchResult.map((result, index) => (
-    <div key={index}
-      data-testid="product"
-      className='products-container'>
-      <Products
-        title={result.title}
-        thumbnail={result.thumbnail}
-        price={result.price}
-        result={result}
-      />
-      <AddCartButton result={result} />
-    </div>
-  ))
+  const loadingCheck = loading ?
+    <Loading />
+    : searchResult.map((result, index) => (
+      <div key={index}
+        data-testid="product"
+        className='products-container'>
+        <Products
+          title={result.title}
+          thumbnail={result.thumbnail}
+          price={result.price}
+          result={result}
+        />
+        <AddCartButton result={result} />
+      </div>
+    ))
 
   return (
     <main className='home'>
+      {/* make a component and implement keypress event */}
       <header>
         <h1>shoppingCart</h1>
         <div className='searchDiv'>

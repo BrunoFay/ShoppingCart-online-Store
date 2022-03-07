@@ -24,30 +24,32 @@ export default function CreditCard({
         />
         <input
           id="cheackoutCardNumber"
-          type='number'
+          type='text'
           name="cardNumber"
           onChange={handleChange}
           value={cardNumber}
           placeholder='Numero do cartão'
-
+          maxLength={16}
         />
         <input
           id="cheackoutValid"
-          type='number'
+          type='text'
           name="validade"
           onChange={handleChange}
           value={validade}
           placeholder='Valid'
-
+          maxLength={4}
         />
 
         <input
           id='cheackoutCVV'
-          type='number'
+          type='text'
           name='cvv'
           onChange={handleChange}
           value={cvv}
           placeholder='CVV'
+          maxLength={3}
+
         />
         <input
           id="cheackoutCEP"
@@ -72,6 +74,7 @@ export default function CreditCard({
         <button className='buy-button' onClick={(e) => e.preventDefault()} type='submit'>Finalizar</button>
 
       </form>
+      {/* refact in cards itens */}
       <div className='card-credit'>
         <div className='card-chip'>
           <img src='https://cdn-icons-png.flaticon.com/512/105/105603.png' alt='chipimage' />
@@ -94,7 +97,7 @@ export default function CreditCard({
 
         </div>
         <div className='card-infos'>
-          {/* formato de validade */}
+          {/* validate format */}
           <span >Valid:<span id='info1'>{validade.replace(/(\d{2}(?!\s))/, "$1/")}</span></span>
           <span >CVV:<span id='info2'>{cvv}</span></span>
         </div>

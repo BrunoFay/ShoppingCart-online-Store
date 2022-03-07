@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Products({ title, thumbnail, price, result, id }) {
 
-
+/* chance the name for products card */
   const { shipping: { free_shipping: freeShipping } } = result;
   return (
     <>
