@@ -4,7 +4,7 @@ import HeaderPages from '../components/HeaderPages';
 import Footer from '../components/Footer';
 import Boleto from '../components/Boleto';
 import CreditCard from '../components/CreditCard';
-import { loadCartArrayLocalStorage } from '../localStorage'
+import { loadCartArrayLocalStorage } from '../services/localStorage'
 
 
 
@@ -64,7 +64,7 @@ export default function Checkout() {
     <>
       <HeaderPages />
       <main className='checkout-main'>
-      {{/* componentizar */ }}
+      {/* componentizar */ }
 
         <section className='section-itens-checkout'>
           {
@@ -84,7 +84,7 @@ export default function Checkout() {
           Soma total: R$
           {totalValue}
         </p>
-        {{/* componentizar */ }}
+        {/* componentizar */ }
         <section >
           <h1>Formas de pagamento</h1>
           <select name='select' value={select} onChange={handleChange}>

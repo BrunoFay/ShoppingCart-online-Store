@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   addLocalStorage,
   loadLocalStorage
-} from '../localStorage'
+} from '../services/localStorage'
 
 export default function AddCartButtonDetails({ result }) {
 

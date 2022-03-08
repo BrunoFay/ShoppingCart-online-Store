@@ -7,7 +7,7 @@ import {
   removeLocalStorage,
   addLocalStorage,
   loadCartArrayLocalStorage
-} from '../localStorage'
+} from '../services/localStorage'
 
 const INITIAL_STATE = {
   cart: [],
