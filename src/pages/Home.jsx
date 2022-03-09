@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Products from '../components/Products';
+import ProductsCard from '../components/ProductsCard';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import CategoriesList from '../components/CategoriesList';
 import AddCartButton from '../components/AddCartButton';
@@ -32,14 +32,16 @@ export default function Home() {
         loading: false
       })));
   }
-
+  const handleKeyDown = (event) => {
+    if (event.charCode === 13||event.keyCode === 13) handleClick()
+  }
   const handleChange = ({ target }) => {
     const { name } = target;
+      setSearchStates(prevState => ({
+        ...prevState,
+        [name]: target.value,
+      }));
 
-    setSearchStates(prevState => ({
-      ...prevState,
-      [name]: target.value,
-    }));
   }
 
   const labelCLick = async ({ target }) => {
@@ -72,7 +74,7 @@ export default function Home() {
       <div key={index}
         data-testid="product"
         className='products-container'>
-        <Products
+        <ProductsCard
           title={result.title}
           thumbnail={result.thumbnail}
           price={result.price}
@@ -93,12 +95,12 @@ export default function Home() {
             value={searchInput}
             onChange={handleChange}
             name="searchInput"
+            onKeyPress={(e)=>handleKeyDown(e)}
           />
           <button
             type="submit"
             data-testid="query-button"
             onClick={handleClick}
-          /* onKeyPress={} */
           >
             🔍
           </button>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-export default function Products({ title, thumbnail, price, result, id }) {
+export default function ProductsCard({ title, thumbnail, price, result, id }) {
 
 /* chance the name for products card */
   const { shipping: { free_shipping: freeShipping } } = result;
@@ -27,7 +27,7 @@ export default function Products({ title, thumbnail, price, result, id }) {
   );
 
 }
-Products.propTypes = {
+ProductsCard.propTypes = {
   title: PropTypes.string,
   thumbnail: PropTypes.string,
   price: PropTypes.number,

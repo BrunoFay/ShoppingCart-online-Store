@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Products from './Products';
+import ProductsCard from './ProductsCard';
 
 const INITIAL_STATE = {
   total: 0,
@@ -64,7 +64,7 @@ export default function ProductsInCart({
   return (
     <main className='products-incart'>
       <div className='products-container' >
-        <Products
+        <ProductsCard
           title={title}
           thumbnail={thumbnail}
           price={(price)}
