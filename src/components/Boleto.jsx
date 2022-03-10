@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-const SERIAL_NUMBER_BOLETO = 999999999909999999
-const RANDOM_NUMER = Math.floor(Math.random() * SERIAL_NUMBER_BOLETO) + SERIAL_NUMBER_BOLETO
+import React from 'react'
+
 
 export default function Boleto({
   nome,
@@ -11,17 +10,9 @@ export default function Boleto({
   endereco,
   handleChange,
   totalValue,
-  quantidadeItens
+  quantidadeItens,
+  codeBoleto
 }) {
-  const [codeBoleto, setCodeBoleto] = useState({ codeBoleto: '' })
-  useEffect(() => {
-    generateBoletoCod()
-
-  }, [])
-
-  const generateBoletoCod = () => setCodeBoleto({ codeBoleto: RANDOM_NUMER })
-
-
 
   return (
     <>

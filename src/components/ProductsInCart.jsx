@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ProductsCard from './ProductsCard';
+import ButtonsQuantity from './ButtonsQuantity';
 
 const INITIAL_STATE = {
   total: 0,
@@ -74,31 +75,19 @@ export default function ProductsInCart({
       </div>
       <div className='buttons-quantity'>
         <div>
-          <button
-            className='quantity'
-            value="-"
-            data-testid="product-decrease-quantity"
-            type="button"
-            onClick={() => countProducts('-')}
-          >
-            -
-          </button>
-
+         <ButtonsQuantity 
+         countProducts={countProducts}
+         value="-"/>
           <span
             data-testid="shopping-cart-product-quantity"
           >
             {countItens}
           </span>
-          <button
-            className='quantity'
-            value="+"
-            data-testid="product-increase-quantity"
-            type="button"
-            onClick={() => countProducts('+')}
-            disabled={buttonDisable}
-          >
-            +
-          </button>
+          <ButtonsQuantity 
+         countProducts={countProducts}
+         value="+"
+         buttonDisable={buttonDisable}/>
+         
         </div>
 
         <span className='price-item'>  R$ {(countItens * price).toFixed(2)}</span>

@@ -7,7 +7,8 @@ import CreditCard from '../components/CreditCard';
 import { loadCartArrayLocalStorage } from '../services/localStorage'
 
 
-
+const SERIAL_NUMBER_BOLETO = 999999999909999999
+const RANDOM_NUMER = Math.floor(Math.random() * SERIAL_NUMBER_BOLETO) + SERIAL_NUMBER_BOLETO
 const INITIAL_STATE = {
   nome: '',
   email: '',
@@ -22,6 +23,8 @@ const INITIAL_STATE = {
 }
 export default function Checkout() {
   const [checkoutInfos, setCheckoutInfos] = useState(INITIAL_STATE)
+  const [codeBoleto, setCodeBoleto] = useState({ codeBoleto: '' })
+
   const {
     nome,
     email,
@@ -38,7 +41,11 @@ export default function Checkout() {
 
   useEffect(() => {
     getLocalStorage()
+    generateBoletoCod()
+
   }, [])
+
+  const generateBoletoCod = () => setCodeBoleto({ codeBoleto: RANDOM_NUMER })
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -47,7 +54,6 @@ export default function Checkout() {
       [name]: value,
     }))
   }
-
   const getLocalStorage = () => {
     setCheckoutInfos((prevState) => ({
       ...prevState,
@@ -64,7 +70,7 @@ export default function Checkout() {
     <>
       <HeaderPages />
       <main className='checkout-main'>
-      {/* componentizar */ }
+        {/* componentizar */}
 
         <section className='section-itens-checkout'>
           {
@@ -84,25 +90,29 @@ export default function Checkout() {
           Soma total: R$
           {totalValue}
         </p>
-        {/* componentizar */ }
+        {/* componentizar */}
         <section >
           <h1>Formas de pagamento</h1>
           <select name='select' value={select} onChange={handleChange}>
             <option name="cartao" value='cartao'>Cartão de Crédito</option>
             <option name="boleto" value='boleto'>Boleto</option>
           </select>
-          {select === 'boleto' ? <Boleto
-            handleChange={handleChange}
-            nome={nome}
-            email={email}
-            cpf={cpf}
-            telefone={telefone}
-            endereco={endereco}
-            cep={cep}
-            totalValue={totalValue}
-            quantidadeItens={cart && cart.length}
-          />
-            : <CreditCard
+          {select === 'boleto' ?
+            <Boleto
+              select={select}
+              handleChange={handleChange}
+              nome={nome}
+              email={email}
+              cpf={cpf}
+              telefone={telefone}
+              endereco={endereco}
+              cep={cep}
+              totalValue={totalValue}
+              quantidadeItens={cart && cart.length}
+              codeBoleto={codeBoleto.codeBoleto}
+            />
+            :
+            <CreditCard
               nome={nome}
               endereco={endereco}
               cep={cep}

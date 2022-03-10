@@ -4,8 +4,10 @@ import AddCartButtonDetails from '../components/AddCartButtonDetails';
 import ProductRating from '../components/ProductRating';
 import Footer from '../components/Footer';
 import HeaderPages from '../components/HeaderPages';
-
-export default function ProductDetails({ location: { state } }) {
+import {useLocation} from 'react-router-dom'
+export default function ProductDetails(props) {
+  const location = useLocation() 
+  console.log(props) 
   const {
     id,
     title,
@@ -13,8 +15,9 @@ export default function ProductDetails({ location: { state } }) {
     available_quantity: quantity,
     thumbnail,
     shipping: { free_shipping: freeShipping
-    } } = state;
-    /* make components */
+    } } = location.state;
+    ;
+    /* make components trazer estado do componen*/
   return (
     <div className='details-pag'>
       <HeaderPages />
@@ -29,7 +32,7 @@ export default function ProductDetails({ location: { state } }) {
           <p>R$ {price}</p>
           <p>Unidades: {quantity}</p>
 
-          <AddCartButtonDetails result={state} />
+          <AddCartButtonDetails result={location.state} />
         </div>
       </div>
       <a target='_blank' href='https://www.betrybe.com/'>

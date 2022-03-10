@@ -22,10 +22,9 @@ export default function CategoriesList({ labelCLick }) {
       <ul className='container__overlay'>
         {categories
           .map((category) => (
-            <li>
+            <li key={category.id}>
               <Link
-                type='button'
-                key={category.id}
+                type='button'             
                 id={category.id}
                 data-testid='category'
                 onClick={labelCLick}

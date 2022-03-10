@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function ProductsCard({ title, thumbnail, price, result, id }) {
 
-/* chance the name for products card */
+/* chance the name for products card colocar o state do details no contex*/
   const { shipping: { free_shipping: freeShipping } } = result;
   return (
     <>
