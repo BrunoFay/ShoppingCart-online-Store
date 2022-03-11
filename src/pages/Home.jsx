@@ -1,54 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, {  useEffect, useContext } from 'react';
 import ProductsCard from '../components/ProductsCard';
-import { getProductsFromCategoryAndQuery } from '../services/api';
 import CategoriesList from '../components/CategoriesList';
 import AddCartButton from '../components/AddCartButton';
 import Footer from '../components/Footer';
 import Loading from '../components/Loading';
+import HeaderPages from '../components/HeaderPages';
+import headerContext from '../context/headerContext';
 
-const INITIAL_STATE = {
-  searchInput: '',
-  searchResult: [],
-  buttonClicked: false,
-  loading: false
-}
+
 export default function Home() {
-  const [searchStates, setSearchStates] = useState(INITIAL_STATE)
-  const { searchInput, searchResult, buttonClicked, loading } = searchStates;
-
-  useEffect(() => {
+  const {
+    setheaderStates,
+    headerStates,
+    getProductsFromCategoryAndQuery, 
+  } = useContext(headerContext)
+  
+   useEffect(() => {
     checkButtonState()
-  }, [searchInput])
+  }, [headerStates.searchInput])  
 
 
-  const handleClick = async () => {
-    setSearchStates(prevState => ({ ...prevState, loading: true }))
-    await getProductsFromCategoryAndQuery('', searchInput)
-      .then((data) => setSearchStates(prevState => ({
-        ...prevState,
-        searchResult: data.results,
-        buttonClicked: true,
-        loading: false
-      })));
-  }
-  const handleKeyDown = (event) => {
-    if (event.charCode === 13||event.keyCode === 13) handleClick()
-  }
-  const handleChange = ({ target }) => {
-    const { name } = target;
-      setSearchStates(prevState => ({
-        ...prevState,
-        [name]: target.value,
-      }));
-
-  }
 
   const labelCLick = async ({ target }) => {
     clearListResult();
-    setSearchStates(prevState => ({ ...prevState, loading: true }))
+    setheaderStates(prevState => ({ ...prevState, loading: true }))
     await getProductsFromCategoryAndQuery(target.id, '')
-      .then((data) => setSearchStates(prevState => ({
+      .then((data) => setheaderStates(prevState => ({
         ...prevState,
         searchResult: data.results,
         loading: false
@@ -56,21 +33,21 @@ export default function Home() {
   }
 
   const clearListResult = () => {
-    setSearchStates(prevState => ({ ...prevState, searchResult: [] }));
+    setheaderStates(prevState => ({ ...prevState, searchResult: [] }));
   }
 
   const checkButtonState = () => {
-    if (searchInput === '') {
-      setSearchStates(prevState => ({
+    if (headerStates.searchInput === '') {
+      setheaderStates(prevState => ({
         ...prevState,
         buttonClicked: false,
       }))
     }
   }
 
-  const loadingCheck = loading ?
+  const loadingCheck = headerStates.loading ?
     <Loading />
-    : searchResult.map((result, index) => (
+    : headerStates.searchResult.map((result, index) => (
       <div key={index}
         data-testid="product"
         className='products-container'>
@@ -81,42 +58,14 @@ export default function Home() {
           result={result}
         />
         <AddCartButton result={result} />
-        sssss
+
       </div>
     ))
 
   return (
     <main className='home'>
       {/* make a component and implement keypress event */}
-      <header>
-        <h1>shoppingCart</h1>
-        <div className='searchDiv'>
-          <input
-            data-testid="query-input"
-            value={searchInput}
-            onChange={handleChange}
-            name="searchInput"
-            onKeyPress={(e)=>handleKeyDown(e)}
-          />
-          <button
-            type="submit"
-            data-testid="query-button"
-            onClick={handleClick}
-          >
-            🔍
-          </button>
-        </div>
-        <nav className='cart'>
-          <Link
-            to="/shopping-cart"
-            type="submit"
-            data-testid="shopping-cart-button"
-          >
-            🛒
-          </Link>
-
-        </nav>
-      </header>
+      <HeaderPages />
       <section className='search-input'>
 
         <span
@@ -129,7 +78,7 @@ export default function Home() {
       <section className='home-containers'>
         <div className='container'>
           {
-            (searchResult.length === 0 && buttonClicked)
+            (headerStates.searchResult.length === 0 && headerStates.buttonClicked)
               ? <h1> Nenhum produto foi encontrado</h1>
               : loadingCheck
           }
