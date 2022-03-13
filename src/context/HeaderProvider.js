@@ -2,16 +2,20 @@
 import React, { useState } from 'react';
 import headerContext from './headerContext';
 import { getProductsFromCategoryAndQuery } from '../services/api';
+import { loadCartArrayLocalStorage } from '../services/localStorage'
+
 
 const INITIAL_STATE = {
   searchInput: '',
   searchResult: [],
   buttonClicked: false,
-  loading: false
+  loading: false,
+  itensInCart: [],
 }
+
 function headerProvider({ children }) {
   const [headerStates, setheaderStates] = useState(INITIAL_STATE)
-  console.log(headerStates);
+  
   const handleClick = async () => {
     setheaderStates(prevState => ({ ...prevState, loading: true }))
     await getProductsFromCategoryAndQuery('', headerStates.searchInput)
@@ -23,15 +27,22 @@ function headerProvider({ children }) {
       })));
   }
   const handleKeyDown = (event) => {
-    if (event.charCode === 13||event.keyCode === 13) handleClick()
+    if (event.charCode === 13 || event.keyCode === 13) handleClick()
   }
   const handleChange = ({ target }) => {
     const { name } = target;
-      setheaderStates(prevState => ({
-        ...prevState,
-        [name]: target.value,
-      }));
+    setheaderStates(prevState => ({
+      ...prevState,
+      [name]: target.value,
+    }));
 
+  }
+  const getLocalStorage = () => {
+    setheaderStates((prevState) => ({
+      ...prevState,
+      itensInCart: loadCartArrayLocalStorage('shoppingCart')
+    }));
+   ;
   }
 
   const contextValue = {
@@ -40,7 +51,8 @@ function headerProvider({ children }) {
     handleKeyDown,
     handleChange,
     handleClick,
-    getProductsFromCategoryAndQuery
+    getProductsFromCategoryAndQuery,
+    getLocalStorage,
   };
 
   return (

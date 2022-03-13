@@ -1,4 +1,4 @@
-import React, {  useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import ProductsCard from '../components/ProductsCard';
 import CategoriesList from '../components/CategoriesList';
 import AddCartButton from '../components/AddCartButton';
@@ -7,29 +7,41 @@ import Loading from '../components/Loading';
 import HeaderPages from '../components/HeaderPages';
 import headerContext from '../context/headerContext';
 
-
 export default function Home() {
   const {
     setheaderStates,
     headerStates,
-    getProductsFromCategoryAndQuery, 
+    getProductsFromCategoryAndQuery,
+    getLocalStorage
   } = useContext(headerContext)
-  
-   useEffect(() => {
+  const { itensInCart,searchInput } = headerStates
+  useEffect(() => {
+    getLocalStorage()
+  }, [itensInCart])
+
+  useEffect(() => {
     checkButtonState()
-  }, [headerStates.searchInput])  
+  }, [searchInput,itensInCart])
 
+  useEffect(async () => {
+    await getProductsFromCategoryAndQuery('MLB1648', '')
+      .then((data) => setheaderStates(prevState => ({
+        ...prevState,
+        searchResult: data.results,
+      })))
+  }, [])
 
+  
 
   const labelCLick = async ({ target }) => {
     clearListResult();
     setheaderStates(prevState => ({ ...prevState, loading: true }))
-    await getProductsFromCategoryAndQuery(target.id, '')
-      .then((data) => setheaderStates(prevState => ({
-        ...prevState,
-        searchResult: data.results,
-        loading: false
-      })))
+    const responseCategoryApi = await getProductsFromCategoryAndQuery(target.id, '')
+    setheaderStates(prevState => ({
+      ...prevState,
+      searchResult: responseCategoryApi.results,
+      loading: false
+    }))
   }
 
   const clearListResult = () => {

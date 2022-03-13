@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import {
   addLocalStorage,
   loadLocalStorage
 } from '../services/localStorage'
+import { RiShoppingCartLine } from 'react-icons/ri';
+import headerContext from '../context/headerContext';
+
 
 export default function AddCartButton({ result }) {
 
+  const { setheaderStates, headerStates } = useContext(headerContext)
 
-  const handleClick = () => {
-    let arr = [];
+  const addCartItensToLocalStorage = () => {
+    let arrayCartItens = [];
     const getLocal = loadLocalStorage('shoppingCart');
     if (getLocal) {
-      arr = loadLocalStorage('shoppingCart');
+      arrayCartItens = loadLocalStorage('shoppingCart');
     }
-    arr.push(result);
-    addLocalStorage('shoppingCart', arr);
+    arrayCartItens.push(result);
+    addLocalStorage('shoppingCart', arrayCartItens);
+
+  }
+  const handleClick = () => {
+    addCartItensToLocalStorage()  
   }
 
 
@@ -26,7 +34,7 @@ export default function AddCartButton({ result }) {
         data-testid="product-add-to-cart"
         onClick={handleClick}
       >
-        Comprar 🛒
+        <RiShoppingCartLine className='cart-logo' />
       </button>
     </>
   );

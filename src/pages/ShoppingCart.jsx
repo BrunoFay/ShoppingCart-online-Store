@@ -1,44 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProductsInCart from '../components/ProductsInCart';
 import Footer from '../components/Footer';
 import HeaderPages from '../components/HeaderPages';
-import {
-  removeLocalStorage,
-  addLocalStorage,
-  loadCartArrayLocalStorage
-} from '../services/localStorage'
+import { removeLocalStorage, addLocalStorage } from '../services/localStorage'
+import headerContext from '../context/headerContext';
 
-const INITIAL_STATE = {
-  cart: [],
-}
+
 export default function ShoppingCart() {
-  const [cartItens, setCartItens] = useState(INITIAL_STATE)
-  const { cart } = cartItens
-
+  const { headerStates, setheaderStates, getLocalStorage } = useContext(headerContext)
+  const { itensInCart } = headerStates
+  
   useEffect(() => {
     getLocalStorage()
-  }, [])
-
-  const getLocalStorage = () => {
-    setCartItens({ cart: loadCartArrayLocalStorage('shoppingCart') });
-  }
+  }, [itensInCart])
 
   const removeItens = ({ target }) => {
     const itemName = target.parentElement.firstChild.firstChild.getAttribute('id')
-    const cartFiltred = cart.filter((i) => i.item.id !== itemName)
+    const cartFiltred = itensInCart.filter((i) => i.item.id !== itemName)
     const cartLocalStoge = cartFiltred.map((i) => i.item)
-    setCartItens({ cart: cartFiltred })
+    setheaderStates((prevState) => ({ ...prevState, itensInCart: cartFiltred }))
     addLocalStorage('shoppingCart', cartLocalStoge);
   }
   const removeCartLocalstorage = () => {
     removeLocalStorage('shoppingCart')
-    setCartItens({ cart: [] })
+    setheaderStates((prevState) => ({ ...prevState, itensInCart: [] }))
   };
   /* fix products in cart logical */
   return (
     <>
-      <HeaderPages cart={cart} />
+      <HeaderPages />
       <main className='shoppingCart' value={''}>
         <button
           className='checkout-button'
@@ -47,9 +38,9 @@ export default function ShoppingCart() {
         >Limpar Carrinho</button>
         <section className='scroll-itens'>
 
-          {!cart
+          {!itensInCart
             ? <h2 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h2>
-            : cart.map((item, index) => (
+            : itensInCart.map((item, index) => (
               <div key={index}>
 
                 <ProductsInCart
@@ -57,7 +48,7 @@ export default function ShoppingCart() {
                   thumbnail={item.item.thumbnail}
                   price={(item.item.price)}
                   result={item.item}
-                  cartState={cart}
+                  cartState={itensInCart}
                   id={item.item.id}
                   countI={item.count}
                   removeItens={(e) => removeItens(e)}

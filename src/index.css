@@ -174,14 +174,16 @@ header section{
   outline: 0;
 }
 
-.searchDiv button{
-  height: 1.5em;
-  right: 35.7%;
+.searchDiv .search-button{
+  height: 1.45em;
+  border-radius: 0 4px 4px 0px;
+  right: 39.1%;
   font-size: x-large;
   position: absolute;
   background-color: rgba(49, 45, 45, 0.911);
   border: none;
-  
+  color: #ececeb;
+  padding: 0 10px;  
 }
 /* pagina detalhes */
 .card-details{
@@ -226,10 +228,14 @@ margin-right: 55%;
   margin: 1em 0 1vh 10vw;
 }
 .cart a{
-font-size: x-large;
+font-size: xx-large;
 margin: 5em 0 0 5em;
+color: #ececeb;
 }
-
+.cart-logo{
+  font-size:19px;
+  padding: 0 1em;
+}
 .details-pag{
   display: flex;
   flex-direction: column;

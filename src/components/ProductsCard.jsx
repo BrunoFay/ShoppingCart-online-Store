@@ -8,18 +8,18 @@ export default function ProductsCard({ title, thumbnail, price, result, id }) {
   const { shipping: { free_shipping: freeShipping } } = result;
   return (
     <>
-      <img className='image-card' src={thumbnail} alt={title} id={id} />
+      <img className='image-card' loading='lazy' src={thumbnail} alt={title} id={id} />
       <span className='product-price'>
 
         {`R$ ${price}`}
       </span>
       {freeShipping && <span
         className='freeShipping'
-        data-testid="free-shipping">Frete Grátis</span>}
+        data-testid='free-shipping'>Frete Grátis</span>}
       <span className='title-product title-product-all'>{title}</span>
       <Link
         to={{ pathname: '/product-details', state: result }}
-        data-testid="product-detail-link"
+        data-testid='product-detail-link'
       >
         Detalhes
       </Link>

@@ -1,14 +1,16 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import headerContext from '../context/headerContext';
+import { BsSearch } from 'react-icons/bs';
+import { RiShoppingCartLine } from 'react-icons/ri';
 
-export default function HeaderPages({ cart }) {
+export default function HeaderPages() {
   const {
     headerStates,
     handleKeyDown,
     handleChange,
     handleClick, } = useContext(headerContext)
-  const { searchInput } = headerStates;
+  const { searchInput,itensInCart } = headerStates;
   return (
     <header>
       <h1>shoppingCart</h1>
@@ -20,13 +22,7 @@ export default function HeaderPages({ cart }) {
           name="searchInput"
           onKeyPress={(e) => handleKeyDown(e)}
         />
-        <button
-          type="submit"
-          data-testid="query-button"
-          onClick={handleClick}
-        >
-          🔍
-        </button>
+       <BsSearch className='search-button' onClick={handleClick}/>
       </div>
       <nav className='cart'>
         <Link
@@ -35,7 +31,8 @@ export default function HeaderPages({ cart }) {
           data-testid="shopping-cart-button"
 
         >
-          {cart && cart.length} 🛒
+          {itensInCart && itensInCart.length} 
+          <RiShoppingCartLine />
         </Link>
 
       </nav>
