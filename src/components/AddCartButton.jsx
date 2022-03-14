@@ -5,12 +5,13 @@ import {
   loadLocalStorage
 } from '../services/localStorage'
 import { RiShoppingCartLine } from 'react-icons/ri';
-import headerContext from '../context/headerContext';
+import productDetailsContext from '../context/productDetailsContext';
+
 
 
 export default function AddCartButton({ result }) {
 
-  const { setheaderStates, headerStates } = useContext(headerContext)
+  const { setProduct } = useContext(productDetailsContext)
 
   const addCartItensToLocalStorage = () => {
     let arrayCartItens = [];
@@ -23,7 +24,8 @@ export default function AddCartButton({ result }) {
 
   }
   const handleClick = () => {
-    addCartItensToLocalStorage()  
+    setProduct(result)
+    addCartItensToLocalStorage()
   }
 
 

@@ -1,13 +1,14 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import AddCartButtonDetails from '../components/AddCartButtonDetails';
-import ProductRating from '../components/ProductRating';
 import Footer from '../components/Footer';
 import HeaderPages from '../components/HeaderPages';
-import {useLocation} from 'react-router-dom'
-export default function ProductDetails(props) {
+import ProductRating from '../components/ProductRating';
+import productDetailsContext from '../context/productDetailsContext';
+export default function ProductDetails() {
   const location = useLocation() 
-  console.log(props) 
+ const {product}=useContext(productDetailsContext)
   const {
     id,
     title,
@@ -15,8 +16,8 @@ export default function ProductDetails(props) {
     available_quantity: quantity,
     thumbnail,
     shipping: { free_shipping: freeShipping
-    } } = location.state;
-    ;
+    } } = product;
+  
     /* make components trazer estado do componen*/
   return (
     <div className='details-pag'>
@@ -32,7 +33,7 @@ export default function ProductDetails(props) {
           <p>R$ {price}</p>
           <p>Unidades: {quantity}</p>
 
-          <AddCartButtonDetails result={location.state} />
+          <AddCartButtonDetails />
         </div>
       </div>
       <a target='_blank' href='https://www.betrybe.com/'>

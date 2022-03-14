@@ -5,19 +5,20 @@ import ProductDetails from './pages/ProductDetails';
 import ShoppingCart from './pages/ShoppingCart';
 import Checkout from './pages/Checkout';
 import HeaderProvider from './context/HeaderProvider'
+import ProductProvider from './context/ProductProvider';
 
 export default function App() {
 
   return (
     <HeaderProvider>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shopping-cart" element={<ShoppingCart />} />
-        <Route path="/product-details" element={<ProductDetails />} />
-        <Route path="/checkout" element={<Checkout />} />
-      </Routes>
-
+      <ProductProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shopping-cart" element={<ShoppingCart />} />
+          <Route path="/product-details" element={<ProductDetails />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </ProductProvider>
     </HeaderProvider>
   );
 
