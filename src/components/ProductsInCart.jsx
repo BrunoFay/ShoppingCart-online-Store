@@ -12,7 +12,7 @@ export default function ProductsInCart({
   title,
   thumbnail,
   price,
-  result,
+  product,
   removeItens,
   id,
   result: { available_quantity: quantity },
@@ -66,11 +66,7 @@ export default function ProductsInCart({
     <main className='products-incart'>
       <div className='products-container' >
         <ProductsCard
-          title={title}
-          thumbnail={thumbnail}
-          price={(price)}
-          result={result}
-          id={id}
+          product={product}
         />
       </div>
       <div className='buttons-quantity'>

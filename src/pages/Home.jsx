@@ -14,14 +14,16 @@ export default function Home() {
     getProductsFromCategoryAndQuery,
     getLocalStorage
   } = useContext(headerContext)
-  const { itensInCart,searchInput } = headerStates
+
+  const { itensInCart, searchInput } = headerStates
+
   useEffect(() => {
     getLocalStorage()
   }, [itensInCart])
 
   useEffect(() => {
     checkButtonState()
-  }, [searchInput,itensInCart])
+  }, [searchInput, itensInCart])
 
   useEffect(async () => {
     await getProductsFromCategoryAndQuery('MLB1648', '')
@@ -31,7 +33,7 @@ export default function Home() {
       })))
   }, [])
 
-  
+
 
   const labelCLick = async ({ target }) => {
     clearListResult();
@@ -59,17 +61,14 @@ export default function Home() {
 
   const loadingCheck = headerStates.loading ?
     <Loading />
-    : headerStates.searchResult.map((result, index) => (
+    : headerStates.searchResult.map((product, index) => (
       <div key={index}
         data-testid="product"
         className='products-container'>
         <ProductsCard
-          title={result.title}
-          thumbnail={result.thumbnail}
-          price={result.price}
-          result={result}
+          product={product}
         />
-        <AddCartButton result={result} />
+        <AddCartButton product={product} />
 
       </div>
     ))

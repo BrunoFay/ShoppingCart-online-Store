@@ -14,26 +14,24 @@ export default function CategoriesList({ labelCLick }) {
 
   }, [])
 
-
-
-
   return (
     <article className='nav-categories'>
       <ul className='container__overlay'>
-        {categories
-          .map((category) => (
-            <li key={category.id}>
-              <Link
-                type='button'             
-                id={category.id}
-                data-testid='category'
-                onClick={labelCLick}
-                to=''
-              >
-                {category.name}
-              </Link>
-            </li>
-          ))}
+        {
+          categories
+            .map((category) => (
+              <li key={category.id}>
+                <Link
+                  type='button'
+                  id={category.id}
+                  data-testid='category'
+                  onClick={labelCLick}
+                  to=''
+                >
+                  {category.name}
+                </Link>
+              </li>
+            ))}
       </ul>
 
     </article>

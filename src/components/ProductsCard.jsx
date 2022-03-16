@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import productDetailsContext from '../context/productDetailsContext';
 
-export default function ProductsCard({ title, thumbnail, price, result, id }) {
+export default function ProductsCard({ product }) {
 
   /* chance the name for products card colocar o state do details no contex*/
-  const { product, setProduct } = useContext(productDetailsContext)
-  const { shipping: { free_shipping: freeShipping } } = result;
+  const { setProduct } = useContext(productDetailsContext)
+  const {
+    shipping: { free_shipping: freeShipping },
+    title,
+    thumbnail,
+    price,
+    id } = product;
 
   return (
     <>
@@ -22,7 +27,7 @@ export default function ProductsCard({ title, thumbnail, price, result, id }) {
       <span className='title-product title-product-all'>{title}</span>
       <Link
         to='/product-details'
-        onClick={() => setProduct(result)}
+        onClick={() => setProduct(product)}
       >
         Detalhes
       </Link>

@@ -1,30 +1,26 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   addLocalStorage,
   loadLocalStorage
 } from '../services/localStorage'
 import { RiShoppingCartLine } from 'react-icons/ri';
-import productDetailsContext from '../context/productDetailsContext';
 
 
 
-export default function AddCartButton({ result }) {
 
-  const { setProduct } = useContext(productDetailsContext)
-
+export default function AddCartButton({ product }) {
   const addCartItensToLocalStorage = () => {
     let arrayCartItens = [];
     const getLocal = loadLocalStorage('shoppingCart');
     if (getLocal) {
       arrayCartItens = loadLocalStorage('shoppingCart');
     }
-    arrayCartItens.push(result);
+    arrayCartItens.push(product);
     addLocalStorage('shoppingCart', arrayCartItens);
 
   }
   const handleClick = () => {
-    setProduct(result)
     addCartItensToLocalStorage()
   }
 
@@ -44,5 +40,5 @@ export default function AddCartButton({ result }) {
 }
 
 AddCartButton.propTypes = {
-  result: PropTypes.object,
+  product: PropTypes.object,
 }.isRequired;

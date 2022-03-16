@@ -47,7 +47,7 @@ export default function ShoppingCart() {
                   title={item.item.title}
                   thumbnail={item.item.thumbnail}
                   price={(item.item.price)}
-                  result={item.item}
+                  product={item.item}
                   cartState={itensInCart}
                   id={item.item.id}
                   countI={item.count}
