@@ -10,23 +10,32 @@ import headerContext from '../context/headerContext';
 export default function ShoppingCart() {
   const { headerStates, setheaderStates, getLocalStorage } = useContext(headerContext)
   const { itensInCart } = headerStates
-  
+
   useEffect(() => {
     getLocalStorage()
-  }, [itensInCart])
+  }, [addLocalStorage])
 
   const removeItens = ({ target }) => {
     const itemName = target.parentElement.firstChild.firstChild.getAttribute('id')
+
     const cartFiltred = itensInCart.filter((i) => i.item.id !== itemName)
-    const cartLocalStoge = cartFiltred.map((i) => i.item)
-    setheaderStates((prevState) => ({ ...prevState, itensInCart: cartFiltred }))
+    removeItensFromLS(cartFiltred)
+  }
+  const removeItensFromLS = (itens) => {
+    const cartLocalStoge = itens.map((i) => i.item)
+    setheaderStates((prevState) => ({
+      ...prevState,
+      itensInCart: itens
+    }))
     addLocalStorage('shoppingCart', cartLocalStoge);
+
   }
   const removeCartLocalstorage = () => {
     removeLocalStorage('shoppingCart')
     setheaderStates((prevState) => ({ ...prevState, itensInCart: [] }))
   };
   /* fix products in cart logical */
+  console.log(itensInCart);
   return (
     <>
       <HeaderPages />
@@ -44,12 +53,9 @@ export default function ShoppingCart() {
               <div key={index}>
 
                 <ProductsInCart
-                  title={item.item.title}
-                  thumbnail={item.item.thumbnail}
                   price={(item.item.price)}
                   product={item.item}
                   cartState={itensInCart}
-                  id={item.item.id}
                   countI={item.count}
                   removeItens={(e) => removeItens(e)}
                 />

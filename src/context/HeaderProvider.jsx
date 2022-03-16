@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import headerContext from './headerContext';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import { loadCartArrayLocalStorage } from '../services/localStorage'
+import { useCallback } from 'react/cjs/react.development';
 
 
 const INITIAL_STATE = {
@@ -13,7 +14,7 @@ const INITIAL_STATE = {
   itensInCart: [],
 }
 
-function headerProvider({ children }) {
+function HeaderProvider({ children }) {
   const [headerStates, setheaderStates] = useState(INITIAL_STATE)
   
   const handleClick = async () => {
@@ -37,13 +38,12 @@ function headerProvider({ children }) {
     }));
 
   }
-  const getLocalStorage = () => {
+  const getLocalStorage = useCallback(() => {
     setheaderStates((prevState) => ({
       ...prevState,
       itensInCart: loadCartArrayLocalStorage('shoppingCart')
-    }));
-   ;
-  }
+    }))
+  },[])
 
   const contextValue = {
     headerStates,
@@ -62,4 +62,4 @@ function headerProvider({ children }) {
   );
 }
 
-export default headerProvider;
+export default HeaderProvider;

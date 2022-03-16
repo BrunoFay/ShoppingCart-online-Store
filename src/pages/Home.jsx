@@ -19,7 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     getLocalStorage()
-  }, [itensInCart])
+  })
 
   useEffect(() => {
     checkButtonState()

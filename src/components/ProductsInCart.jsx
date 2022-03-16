@@ -9,18 +9,12 @@ const INITIAL_STATE = {
   buttonDisable: false,
 }
 export default function ProductsInCart({
-  title,
-  thumbnail,
-  price,
   product,
-  removeItens,
-  id,
-  result: { available_quantity: quantity },
   countI,
-
 }) {
   const [productsInCart, setProductsInCart] = useState(INITIAL_STATE)
   const { countItens, buttonDisable } = productsInCart;
+  const { price, removeItens, available_quantity: quantity } = product
 
 
   useEffect(() => {
@@ -71,19 +65,19 @@ export default function ProductsInCart({
       </div>
       <div className='buttons-quantity'>
         <div>
-         <ButtonsQuantity 
-         countProducts={countProducts}
-         value="-"/>
+          <ButtonsQuantity
+            countProducts={countProducts}
+            value="-" />
           <span
             data-testid="shopping-cart-product-quantity"
           >
             {countItens}
           </span>
-          <ButtonsQuantity 
-         countProducts={countProducts}
-         value="+"
-         buttonDisable={buttonDisable}/>
-         
+          <ButtonsQuantity
+            countProducts={countProducts}
+            value="+"
+            buttonDisable={buttonDisable} />
+
         </div>
 
         <span className='price-item'>  R$ {(countItens * price).toFixed(2)}</span>
