@@ -13,7 +13,7 @@ export default function ShoppingCart() {
 
   useEffect(() => {
     getLocalStorage()
-  }, [addLocalStorage])
+  }, [itensInCart])
 
   const removeItens = ({ target }) => {
     const itemName = target.parentElement.firstChild.firstChild.getAttribute('id')

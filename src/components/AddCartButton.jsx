@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {
-  addLocalStorage,
-  loadLocalStorage
-} from '../services/localStorage'
+import { addLocalStorage, loadLocalStorage } from '../services/localStorage'
 import { RiShoppingCartLine } from 'react-icons/ri';
+import headerContext from '../context/headerContext';
 
 
 
 
 export default function AddCartButton({ product }) {
+  const { getLocalStorage } = useContext(headerContext);
   const addCartItensToLocalStorage = () => {
     let arrayCartItens = [];
     const getLocal = loadLocalStorage('shoppingCart');
@@ -23,6 +22,9 @@ export default function AddCartButton({ product }) {
   const handleClick = () => {
     addCartItensToLocalStorage()
   }
+  useEffect(() => {
+    getLocalStorage()
+  }, [handleClick])
 
 
   return (

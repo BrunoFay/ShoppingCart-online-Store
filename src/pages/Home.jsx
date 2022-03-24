@@ -19,8 +19,9 @@ export default function Home() {
 
   useEffect(() => {
     getLocalStorage()
-  })
-
+  },[])
+  
+  
   useEffect(() => {
     checkButtonState()
   }, [searchInput, itensInCart])
