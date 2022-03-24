@@ -35,7 +35,6 @@ export default function ShoppingCart() {
     setheaderStates((prevState) => ({ ...prevState, itensInCart: [] }))
   };
   /* fix products in cart logical */
-  console.log(itensInCart);
   return (
     <>
       <HeaderPages />
@@ -53,11 +52,10 @@ export default function ShoppingCart() {
               <div key={index}>
 
                 <ProductsInCart
-                  price={(item.item.price)}
-                  product={item.item}
-                  cartState={itensInCart}
+                  product={item.item}     
                   countI={item.count}
-                  removeItens={(e) => removeItens(e)}
+                  removeItens={(e) => removeItens(e)
+                  }
                 />
 
               </div>

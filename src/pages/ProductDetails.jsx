@@ -1,14 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
-import { useLocation } from 'react-router-dom';
 import AddCartButtonDetails from '../components/AddCartButtonDetails';
 import Footer from '../components/Footer';
 import HeaderPages from '../components/HeaderPages';
 import ProductRating from '../components/ProductRating';
 import productDetailsContext from '../context/productDetailsContext';
 export default function ProductDetails() {
-  const location = useLocation() 
- const {product}=useContext(productDetailsContext)
+  const { product } = useContext(productDetailsContext)
   const {
     id,
     title,
@@ -17,8 +15,7 @@ export default function ProductDetails() {
     thumbnail,
     shipping: { free_shipping: freeShipping
     } } = product;
-  
-    /* make components trazer estado do componen*/
+
   return (
     <div className='details-pag'>
       <HeaderPages />

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ProductsCard from './ProductsCard';
 import ButtonsQuantity from './ButtonsQuantity';
 
+
 const INITIAL_STATE = {
   total: 0,
   countItens: 1,
@@ -11,15 +12,12 @@ const INITIAL_STATE = {
 export default function ProductsInCart({
   product,
   countI,
+  removeItens
 }) {
   const [productsInCart, setProductsInCart] = useState(INITIAL_STATE)
   const { countItens, buttonDisable } = productsInCart;
-  const { price, removeItens, available_quantity: quantity } = product
+  const { price, available_quantity: quantity } = product
 
-
-  useEffect(() => {
-    updateState();
-  }, [])
 
 
   // referencia https://stackoverflow.com/questions/55495198/reacts-setstate-method-with-prevstate-argument/55496277
@@ -54,7 +52,9 @@ export default function ProductsInCart({
       countItens: countI,
     }));
   }
-
+  useEffect(() => {
+    updateState();
+  }, [])
 
   return (
     <main className='products-incart'>
