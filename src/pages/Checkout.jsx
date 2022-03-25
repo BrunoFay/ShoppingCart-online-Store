@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import HeaderPages from '../components/HeaderPages';
 import Footer from '../components/Footer';
 import Boleto from '../components/Boleto';
 import CreditCard from '../components/CreditCard';
-import { loadCartArrayLocalStorage } from '../services/localStorage'
+import headerContext from '../context/headerContext';
+import productDetailsContext from '../context/productDetailsContext';
 
 
-const SERIAL_NUMBER_BOLETO = 999999999909999999
+const SERIAL_NUMBER_BOLETO = 9 ** 16
 const RANDOM_NUMER = Math.floor(Math.random() * SERIAL_NUMBER_BOLETO) + SERIAL_NUMBER_BOLETO
 const INITIAL_STATE = {
   nome: '',
@@ -24,7 +25,7 @@ const INITIAL_STATE = {
 export default function Checkout() {
   const [checkoutInfos, setCheckoutInfos] = useState(INITIAL_STATE)
   const [codeBoleto, setCodeBoleto] = useState({ codeBoleto: '' })
-
+  const { productStates: { itensInCart } } = useContext(productDetailsContext)
   const {
     nome,
     email,
@@ -40,9 +41,7 @@ export default function Checkout() {
   } = checkoutInfos;
 
   useEffect(() => {
-    getLocalStorage()
     generateBoletoCod()
-
   }, [])
 
   const generateBoletoCod = () => setCodeBoleto({ codeBoleto: RANDOM_NUMER })
@@ -54,12 +53,7 @@ export default function Checkout() {
       [name]: value,
     }))
   }
-  const getLocalStorage = () => {
-    setCheckoutInfos((prevState) => ({
-      ...prevState,
-      cart: loadCartArrayLocalStorage('shoppingCart')
-    }))
-  }
+
 
   const totalValue = cart && cart
     .map((e) => e.item.price * e.count)
@@ -70,12 +64,12 @@ export default function Checkout() {
     <>
       <HeaderPages />
       <main className='checkout-main'>
-        {/* componentizar */}
+
 
         <section className='section-itens-checkout'>
           {
-            cart && cart.map((e, index) => (
-              <div key={index} className='checkout-itens'>
+            itensInCart && itensInCart.map((e) => (
+              <div key={e.item.id} className='checkout-itens'>
                 <img src={e.item.thumbnail} alt={e.item.title} />
                 <span className='title-product-all'>{e.item.title}</span>
                 <p>

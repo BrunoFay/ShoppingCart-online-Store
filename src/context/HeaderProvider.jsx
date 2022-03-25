@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import headerContext from './headerContext';
 import { getProductsFromCategoryAndQuery } from '../services/api';
-import { loadCartArrayLocalStorage } from '../services/localStorage'
-import { useCallback } from 'react/cjs/react.development';
+
 
 
 const INITIAL_STATE = {
@@ -12,15 +11,18 @@ const INITIAL_STATE = {
   buttonClicked: false,
   loading: false,
   itensInCart: [],
+  categories: [],
 }
 
 function HeaderProvider({ children }) {
-  const [headerStates, setheaderStates] = useState(INITIAL_STATE)
-  
+  const [headerStates, setHeaderStates] = useState(INITIAL_STATE)
+
   const handleClick = async () => {
-    setheaderStates(prevState => ({ ...prevState, loading: true }))
+    
+    setHeaderStates(prevState => ({ ...prevState, loading: true }))
+    
     await getProductsFromCategoryAndQuery('', headerStates.searchInput)
-      .then((data) => setheaderStates(prevState => ({
+      .then((data) => setHeaderStates(prevState => ({
         ...prevState,
         searchResult: data.results,
         buttonClicked: true,
@@ -32,27 +34,23 @@ function HeaderProvider({ children }) {
   }
   const handleChange = ({ target }) => {
     const { name } = target;
-    setheaderStates(prevState => ({
+    setHeaderStates(prevState => ({
       ...prevState,
       [name]: target.value,
     }));
 
   }
-  const getLocalStorage = useCallback(() => {
-    setheaderStates((prevState) => ({
-      ...prevState,
-      itensInCart: loadCartArrayLocalStorage('shoppingCart')
-    }))
-  },[])
+  
+/* setar uma vez o estado vindo do locastorage no hedear e usar o useeffect para atualizar a acada nova adição de itens no carrinho */ 
+
 
   const contextValue = {
     headerStates,
-    setheaderStates,
+    setHeaderStates,
     handleKeyDown,
     handleChange,
     handleClick,
     getProductsFromCategoryAndQuery,
-    getLocalStorage,
   };
 
   return (

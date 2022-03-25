@@ -1,16 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import headerContext from '../context/headerContext';
 import { BsSearch } from 'react-icons/bs';
 import { RiShoppingCartLine } from 'react-icons/ri';
-
-export default function HeaderPages() {
+import productDetailsContext from '../context/productDetailsContext';
+function HeaderPages() {
   const {
-    headerStates,
+    headerStates:{searchInput},
     handleKeyDown,
     handleChange,
-    handleClick, } = useContext(headerContext)
-  const { searchInput,itensInCart } = headerStates;
+    handleClick,
+  } = useContext(headerContext)
+  const { getLocalStorage,productStates:{itensInCart} } = useContext(productDetailsContext)
+  
+
+  useEffect(() => {
+    getLocalStorage()
+  }, [])
+
+  const NUMBER_OF_ITENS_IN_CART = itensInCart && itensInCart.length;
+
   return (
     <header>
       <h1>shoppingCart</h1>
@@ -22,7 +31,7 @@ export default function HeaderPages() {
           name="searchInput"
           onKeyPress={(e) => handleKeyDown(e)}
         />
-       <BsSearch className='search-button' onClick={handleClick}/>
+        <BsSearch className='search-button' onClick={handleClick} />
       </div>
       <nav className='cart'>
         <Link
@@ -31,7 +40,7 @@ export default function HeaderPages() {
           data-testid="shopping-cart-button"
 
         >
-          {itensInCart && itensInCart.length} 
+          {NUMBER_OF_ITENS_IN_CART}
           <RiShoppingCartLine />
         </Link>
 
@@ -39,3 +48,6 @@ export default function HeaderPages() {
     </header>
   )
 }
+
+
+export default HeaderPages

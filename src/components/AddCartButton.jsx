@@ -1,30 +1,23 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { addLocalStorage, loadLocalStorage } from '../services/localStorage'
 import { RiShoppingCartLine } from 'react-icons/ri';
-import headerContext from '../context/headerContext';
+import productDetailsContext from '../context/productDetailsContext';
 
+function AddCartButton({ product }) {
+  const {
+    addCartItensToLocalStorage,
+    setProductStates,
+    productStates: { itensInCart },
+  } = useContext(productDetailsContext);
 
-
-
-export default function AddCartButton({ product }) {
-  const { getLocalStorage } = useContext(headerContext);
-  const addCartItensToLocalStorage = () => {
-    let arrayCartItens = [];
-    const getLocal = loadLocalStorage('shoppingCart');
-    if (getLocal) {
-      arrayCartItens = loadLocalStorage('shoppingCart');
-    }
-    arrayCartItens.push(product);
-    addLocalStorage('shoppingCart', arrayCartItens);
-
-  }
   const handleClick = () => {
-    addCartItensToLocalStorage()
+    addCartItensToLocalStorage(product)
+
+    setProductStates((prevState) => ({
+      ...prevState,
+      itensInCart
+    }));
   }
-  useEffect(() => {
-    getLocalStorage()
-  }, [handleClick])
 
 
   return (
@@ -40,7 +33,7 @@ export default function AddCartButton({ product }) {
   );
 
 }
-
+export default AddCartButton;
 AddCartButton.propTypes = {
   product: PropTypes.object,
 }.isRequired;

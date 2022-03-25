@@ -4,16 +4,13 @@ import ProductsInCart from '../components/ProductsInCart';
 import Footer from '../components/Footer';
 import HeaderPages from '../components/HeaderPages';
 import { removeLocalStorage, addLocalStorage } from '../services/localStorage'
-import headerContext from '../context/headerContext';
+import productDetailsContext from '../context/productDetailsContext';
 
 
 export default function ShoppingCart() {
-  const { headerStates, setheaderStates, getLocalStorage } = useContext(headerContext)
-  const { itensInCart } = headerStates
+  const { productStates, setProductStates } = useContext(productDetailsContext)
+  const { itensInCart } = productStates
 
-  useEffect(() => {
-    getLocalStorage()
-  }, [itensInCart])
 
   const removeItens = ({ target }) => {
     const itemName = target.parentElement.firstChild.firstChild.getAttribute('id')
@@ -23,7 +20,7 @@ export default function ShoppingCart() {
   }
   const removeItensFromLS = (itens) => {
     const cartLocalStoge = itens.map((i) => i.item)
-    setheaderStates((prevState) => ({
+    setProductStates((prevState) => ({
       ...prevState,
       itensInCart: itens
     }))
@@ -32,9 +29,9 @@ export default function ShoppingCart() {
   }
   const removeCartLocalstorage = () => {
     removeLocalStorage('shoppingCart')
-    setheaderStates((prevState) => ({ ...prevState, itensInCart: [] }))
+    setProductStates((prevState) => ({ ...prevState, itensInCart: [] }))
   };
-  /* fix products in cart logical */
+
   return (
     <>
       <HeaderPages />
@@ -52,7 +49,7 @@ export default function ShoppingCart() {
               <div key={index}>
 
                 <ProductsInCart
-                  product={item.item}     
+                  product={item.item}
                   countI={item.count}
                   removeItens={(e) => removeItens(e)
                   }

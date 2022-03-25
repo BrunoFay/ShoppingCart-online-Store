@@ -6,7 +6,7 @@ import HeaderPages from '../components/HeaderPages';
 import ProductRating from '../components/ProductRating';
 import productDetailsContext from '../context/productDetailsContext';
 export default function ProductDetails() {
-  const { product } = useContext(productDetailsContext)
+  const { productStates: {productDetail}} = useContext(productDetailsContext)
   const {
     id,
     title,
@@ -14,7 +14,7 @@ export default function ProductDetails() {
     available_quantity: quantity,
     thumbnail,
     shipping: { free_shipping: freeShipping
-    } } = product;
+    } } = productDetail;
 
   return (
     <div className='details-pag'>
@@ -56,3 +56,13 @@ ProductDetails.propTypes = {
     }),
   }),
 }.isRequired;
+
+
+/*  const { setProductStates,productStates:{productDetail} } = useContext(productDetailsContext)
+  const {
+    shipping: { free_shipping: freeShipping },
+    title,
+    thumbnail,
+    price,
+    id } = product;
+ */

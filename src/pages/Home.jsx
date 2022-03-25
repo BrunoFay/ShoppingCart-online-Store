@@ -6,41 +6,41 @@ import Footer from '../components/Footer';
 import Loading from '../components/Loading';
 import HeaderPages from '../components/HeaderPages';
 import headerContext from '../context/headerContext';
+import productDetailsContext from '../context/productDetailsContext';
 
 export default function Home() {
   const {
-    setheaderStates,
+    setHeaderStates,
     headerStates,
     getProductsFromCategoryAndQuery,
-    getLocalStorage
   } = useContext(headerContext)
 
-  const { itensInCart, searchInput } = headerStates
+  const { searchInput, loading, searchResult, buttonClicked } = headerStates
+  const { getLocalStorage,productStates:{itensInCart} } = useContext(productDetailsContext)
+  
 
   useEffect(() => {
     getLocalStorage()
-  },[])
-  
-  
+  }, [itensInCart])
+
   useEffect(() => {
     checkButtonState()
-  }, [searchInput, itensInCart])
+  }, [searchInput])
 
   useEffect(async () => {
     await getProductsFromCategoryAndQuery('MLB1648', '')
-      .then((data) => setheaderStates(prevState => ({
+      .then((data) => setHeaderStates(prevState => ({
         ...prevState,
         searchResult: data.results,
       })))
   }, [])
 
 
-
   const labelCLick = async ({ target }) => {
     clearListResult();
-    setheaderStates(prevState => ({ ...prevState, loading: true }))
+    setHeaderStates(prevState => ({ ...prevState, loading: true }))
     const responseCategoryApi = await getProductsFromCategoryAndQuery(target.id, '')
-    setheaderStates(prevState => ({
+    setHeaderStates(prevState => ({
       ...prevState,
       searchResult: responseCategoryApi.results,
       loading: false
@@ -48,31 +48,34 @@ export default function Home() {
   }
 
   const clearListResult = () => {
-    setheaderStates(prevState => ({ ...prevState, searchResult: [] }));
+    setHeaderStates(prevState => ({ ...prevState, searchResult: [] }));
   }
 
   const checkButtonState = () => {
     if (headerStates.searchInput === '') {
-      setheaderStates(prevState => ({
+      setHeaderStates(prevState => ({
         ...prevState,
         buttonClicked: false,
       }))
     }
   }
 
-  const loadingCheck = headerStates.loading ?
+  const loadingCheck = loading ? (
     <Loading />
-    : headerStates.searchResult.map((product, index) => (
-      <div key={index}
-        data-testid="product"
-        className='products-container'>
-        <ProductsCard
-          product={product}
-        />
-        <AddCartButton product={product} />
+  )
+    : (
+      searchResult.map((product, index) => (
+        <div key={index}
+          data-testid="product"
+          className='products-container'>
+          <ProductsCard
+            product={product}
+          />
+          <AddCartButton product={product} />
 
-      </div>
-    ))
+        </div>
+      ))
+    )
 
   return (
     <main className='home'>
@@ -90,7 +93,7 @@ export default function Home() {
       <section className='home-containers'>
         <div className='container'>
           {
-            (headerStates.searchResult.length === 0 && headerStates.buttonClicked)
+            (searchResult.length === 0 && buttonClicked)
               ? <h1> Nenhum produto foi encontrado</h1>
               : loadingCheck
           }

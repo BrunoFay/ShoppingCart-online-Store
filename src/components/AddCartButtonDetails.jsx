@@ -1,24 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import {
-  addLocalStorage,
-  loadLocalStorage
-} from '../services/localStorage'
+import productDetailsContext from '../context/productDetailsContext';
 
-export default function AddCartButtonDetails({ result }) {
-
-  const handleClick = () => {
-    let arrayItenstoLS = [];
-     arrayItenstoLS = loadLocalStorage('shoppingCart');
-    arrayItenstoLS.push(result);
-    addLocalStorage('shoppingCart', arrayItenstoLS);
-  }
+export default function AddCartButtonDetails() {
+  const {
+    productStates: { productDetail },
+    addCartItensToLocalStorage } = useContext(productDetailsContext)
 
   return (
     <button
       type="button"
       data-testid="product-detail-add-to-cart"
-      onClick={handleClick}
+      onClick={addCartItensToLocalStorage(productDetail)}
     >
       Adicionar ao Carrinho
     </button>

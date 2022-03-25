@@ -6,7 +6,7 @@ import productDetailsContext from '../context/productDetailsContext';
 export default function ProductsCard({ product }) {
 
   /* chance the name for products card colocar o state do details no contex*/
-  const { setProduct } = useContext(productDetailsContext)
+  const { setProductStates } = useContext(productDetailsContext)
   const {
     shipping: { free_shipping: freeShipping },
     title,
@@ -27,7 +27,7 @@ export default function ProductsCard({ product }) {
       <span className='title-product title-product-all'>{title}</span>
       <Link
         to='/product-details'
-        onClick={() => setProduct(product)}
+        onClick={() => setProductStates((prevState) => ({ ...prevState, productDetail: product }))}
       >
         Detalhes
       </Link>
