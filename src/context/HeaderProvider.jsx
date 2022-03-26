@@ -22,7 +22,7 @@ function HeaderProvider({ children }) {
 
   const checkLocation =async () => {
     if(pathname !== '/') {
-      await handleClick();
+      await handleClick ();
       return navigate("/");
     }
   }
