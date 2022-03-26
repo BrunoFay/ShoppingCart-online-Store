@@ -55,7 +55,7 @@ export default function Checkout() {
   }
 
 
-  const totalValue = cart && cart
+  const totalValue = itensInCart && itensInCart
     .map((e) => e.item.price * e.count)
     .reduce((a, b) => a + b, 0)
     .toFixed(2)

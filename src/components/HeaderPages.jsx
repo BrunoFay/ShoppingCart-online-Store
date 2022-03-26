@@ -6,17 +6,19 @@ import { RiShoppingCartLine } from 'react-icons/ri';
 import productDetailsContext from '../context/productDetailsContext';
 function HeaderPages() {
   const {
-    headerStates:{searchInput},
+    headerStates: { searchInput },
     handleKeyDown,
     handleChange,
     handleClick,
   } = useContext(headerContext)
-  const { getLocalStorage,productStates:{itensInCart} } = useContext(productDetailsContext)
   
-
+  const { getLocalStorage, productStates: { itensInCart } } = useContext(productDetailsContext)
+  
   useEffect(() => {
     getLocalStorage()
   }, [])
+
+
 
   const NUMBER_OF_ITENS_IN_CART = itensInCart && itensInCart.length;
 

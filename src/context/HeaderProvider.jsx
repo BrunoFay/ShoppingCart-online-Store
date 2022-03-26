@@ -1,7 +1,8 @@
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import headerContext from './headerContext';
 import { getProductsFromCategoryAndQuery } from '../services/api';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
@@ -16,10 +17,19 @@ const INITIAL_STATE = {
 
 function HeaderProvider({ children }) {
   const [headerStates, setHeaderStates] = useState(INITIAL_STATE)
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
+  const checkLocation =async () => {
+    if(pathname !== '/') {
+      await handleClick();
+      return navigate("/");
+    }
+  }
   const handleClick = async () => {
     
     setHeaderStates(prevState => ({ ...prevState, loading: true }))
+    checkLocation()
     
     await getProductsFromCategoryAndQuery('', headerStates.searchInput)
       .then((data) => setHeaderStates(prevState => ({
@@ -41,6 +51,9 @@ function HeaderProvider({ children }) {
 
   }
   
+ 
+
+
 /* setar uma vez o estado vindo do locastorage no hedear e usar o useeffect para atualizar a acada nova adição de itens no carrinho */ 
 
 
@@ -51,6 +64,8 @@ function HeaderProvider({ children }) {
     handleChange,
     handleClick,
     getProductsFromCategoryAndQuery,
+    checkLocation,
+    pathname
   };
 
   return (

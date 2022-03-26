@@ -39,7 +39,7 @@ export default function ProductProvider({ children }) {
      productStates,
      setProductStates,
      getLocalStorage,
-     addCartItensToLocalStorage
+     addCartItensToLocalStorage,
      };
   
   return (

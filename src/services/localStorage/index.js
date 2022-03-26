@@ -6,7 +6,7 @@ export const loadLocalStorage = (key) => JSON.parse(localStorage.getItem(key));
 
 export const removeLocalStorage = (key) => localStorage.removeItem(key)
 
-export const loadCartArrayLocalStorage = (key, quantatyNum = 0) => {
+export const loadCartArrayLocalStorage = (key) => {
   const cartLocalStorage = loadLocalStorage(key);
   if (cartLocalStorage) {
     const arrIds = cartLocalStorage.map((element) => element.id);
@@ -16,7 +16,7 @@ export const loadCartArrayLocalStorage = (key, quantatyNum = 0) => {
     const arrArr = arrayWithoutDuplicateItems
       .map((id) => cartLocalStorage.filter((item) => item.id === id));
     const answer = arrObj
-      .map((obj, indice) => ({ item: obj, count: arrArr[indice].length - quantatyNum}))
+      .map((obj, indice) => ({ item: obj, count: arrArr[indice].length}))
     return answer
   }
 }

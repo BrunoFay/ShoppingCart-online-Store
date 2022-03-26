@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ProductsCard from './ProductsCard';
 import ButtonsQuantity from './ButtonsQuantity';
-import headerContext from '../context/headerContext';
+import productDetailsContext from '../context/productDetailsContext';
 
 const INITIAL_STATE = {
   total: 0,
@@ -17,7 +17,7 @@ export default function ProductsInCart({
   const [productsInCart, setProductsInCart] = useState(INITIAL_STATE)
   const { countItens, buttonDisable } = productsInCart;
   const { price, available_quantity: quantity } = product
-  const { addCartItensToLocalStorage } = useContext(headerContext)
+  const { addCartItensToLocalStorage } = useContext(productDetailsContext)
 
 
   // referencia https://stackoverflow.com/questions/55495198/reacts-setstate-method-with-prevstate-argument/55496277
@@ -35,7 +35,7 @@ export default function ProductsInCart({
         ...prevState,
         countItens: prevState.countItens - 1,
       }));
-      addCartItensToLocalStorage(product, 1)
+      
 
     }
   }

@@ -58,11 +58,3 @@ ProductDetails.propTypes = {
 }.isRequired;
 
 
-/*  const { setProductStates,productStates:{productDetail} } = useContext(productDetailsContext)
-  const {
-    shipping: { free_shipping: freeShipping },
-    title,
-    thumbnail,
-    price,
-    id } = product;
- */
