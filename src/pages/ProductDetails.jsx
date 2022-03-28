@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
-import AddCartButtonDetails from '../components/AddCartButtonDetails';
-import Footer from '../components/Footer';
-import HeaderPages from '../components/HeaderPages';
-import ProductRating from '../components/ProductRating';
+import AddCartButtonDetails from '../components/buttons/AddCartButtonDetails';
+import HeaderPages from '../components/header/HeaderPages';
+import Footer from '../components/footer/Footer';
+import ProductRating from '../components/products/ProductRating';
 import productDetailsContext from '../context/productDetailsContext';
 export default function ProductDetails() {
   const { productStates: {productDetail}} = useContext(productDetailsContext)

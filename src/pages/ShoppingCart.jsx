@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ProductsInCart from '../components/ProductsInCart';
-import Footer from '../components/Footer';
-import HeaderPages from '../components/HeaderPages';
+import ProductsInCart from '../components/products/ProductsInCart';
+import Footer from '../components/footer/Footer';
+import HeaderPages from '../components/header/HeaderPages';
 import { removeLocalStorage, addLocalStorage } from '../services/localStorage'
 import productDetailsContext from '../context/productDetailsContext';
 

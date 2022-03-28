@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { RiShoppingCartLine } from 'react-icons/ri';
-import productDetailsContext from '../context/productDetailsContext';
+import productDetailsContext from '../../context/productDetailsContext';
 
 function AddCartButton({ product }) {
   const {

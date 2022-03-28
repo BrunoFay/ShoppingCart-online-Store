@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import HeaderPages from '../components/HeaderPages';
-import Footer from '../components/Footer';
-import Boleto from '../components/Boleto';
-import CreditCard from '../components/CreditCard';
-import headerContext from '../context/headerContext';
+import HeaderPages from '../components/header/HeaderPages';
+import Footer from '../components/footer/Footer';
+import Boleto from '../components/paymentMethods/Boleto';
+import CreditCard from '../components/paymentMethods/CreditCard';
 import productDetailsContext from '../context/productDetailsContext';
 
 
@@ -84,7 +83,6 @@ export default function Checkout() {
           Soma total: R$
           {totalValue}
         </p>
-        {/* componentizar */}
         <section >
           <h1>Formas de pagamento</h1>
           <select name='select' value={select} onChange={handleChange}>

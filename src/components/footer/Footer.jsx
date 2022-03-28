@@ -1,5 +1,5 @@
 import React from 'react'
-import Loading from './Loading'
+import Loading from '../loading/Loading'
 import { BsLinkedin } from 'react-icons/bs';
 import { BsGithub } from 'react-icons/bs';
 

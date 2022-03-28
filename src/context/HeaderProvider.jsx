@@ -51,7 +51,20 @@ function HeaderProvider({ children }) {
 
   }
   
- 
+  const labelCLick = async ({ target }) => {
+    clearListResult();
+    setHeaderStates(prevState => ({ ...prevState, loading: true }))
+    const responseCategoryApi = await getProductsFromCategoryAndQuery(target.id, '')
+    setHeaderStates(prevState => ({
+      ...prevState,
+      searchResult: responseCategoryApi.results,
+      loading: false
+    }))
+  }
+
+  const clearListResult = () => {
+    setHeaderStates(prevState => ({ ...prevState, searchResult: [] }));
+  }
 
 
 /* setar uma vez o estado vindo do locastorage no hedear e usar o useeffect para atualizar a acada nova adição de itens no carrinho */ 
@@ -65,7 +78,8 @@ function HeaderProvider({ children }) {
     handleClick,
     getProductsFromCategoryAndQuery,
     checkLocation,
-    pathname
+    pathname,
+    labelCLick
   };
 
   return (

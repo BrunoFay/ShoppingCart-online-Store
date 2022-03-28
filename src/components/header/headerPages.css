@@ -1,0 +1,85 @@
+header h1, .nav-home-link h1, .boleto-titulo span {
+  text-shadow: 2px 2px 2px rgba(14, 13, 13, 0.582);
+  color: rgb(19, 207, 19);
+}
+
+header, .nav-home-link, footer {
+  display: flex;
+  margin-bottom: 2em;
+  background-color: rgb(228, 2, 228);
+  justify-content: space-around;
+  height: 6em;
+  border-bottom: 1px solid black;
+}
+
+header section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.headers-links {
+  display: flex;
+  gap: 2em;
+}
+
+.search-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 35em;
+  margin-bottom: 1em;
+
+}
+
+.search-input span {
+  display: none;
+}
+
+.searchDiv {
+  display: flex;
+  justify-self: center;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap:2rem;
+}
+
+.searchDiv input {
+  height: 2.1em;
+  width: 28rem;
+  border-radius: 7px 0 0 7px;
+  border: none;
+  font-size: 18px;
+}
+
+.searchDiv input:focus {
+  outline: 0;
+}
+
+.searchDiv .search-button {
+  height: 1.45em;
+  border-radius: 0 4px 4px 0px;
+  right: 39.1%;
+  font-size: x-large;
+  position: absolute;
+  background-color: rgba(49, 45, 45, 0.911);
+  border: none;
+  color: #ececeb;
+  padding: 0 10px;
+}
+
+.cart {
+  margin: 1em 0 1vh 10vw;
+}
+
+.cart a {
+  font-size: xx-large;
+  margin: 5em 0 0 5em;
+  color: #ececeb;
+}
+
+.cart-logo {
+  font-size: 19px;
+  padding: 0 1em;
+}

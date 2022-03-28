@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ProductsCard from './ProductsCard';
-import ButtonsQuantity from './ButtonsQuantity';
-import productDetailsContext from '../context/productDetailsContext';
+import ButtonsQuantity from '../buttons/ButtonsQuantity';
+import productDetailsContext from '../../context/productDetailsContext';
 
 const INITIAL_STATE = {
   total: 0,

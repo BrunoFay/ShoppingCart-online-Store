@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import productDetailsContext from '../context/productDetailsContext';
+import productDetailsContext from '../../context/productDetailsContext';
 
 export default function AddCartButtonDetails() {
   const {

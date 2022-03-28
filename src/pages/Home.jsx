@@ -1,10 +1,9 @@
 import React, { useEffect, useContext } from 'react';
-import ProductsCard from '../components/ProductsCard';
-import CategoriesList from '../components/CategoriesList';
-import AddCartButton from '../components/AddCartButton';
-import Footer from '../components/Footer';
-import Loading from '../components/Loading';
-import HeaderPages from '../components/HeaderPages';
+import ProductsCard from '../components/products/ProductsCard';
+import AddCartButton from '../components/buttons/AddCartButton';
+import HeaderPages from '../components/header/HeaderPages';
+import Footer from '../components/footer/Footer';
+import Loading from '../components/loading/Loading';
 import headerContext from '../context/headerContext';
 import productDetailsContext from '../context/productDetailsContext';
 
@@ -36,20 +35,7 @@ export default function Home() {
   }, [])
 
 
-  const labelCLick = async ({ target }) => {
-    clearListResult();
-    setHeaderStates(prevState => ({ ...prevState, loading: true }))
-    const responseCategoryApi = await getProductsFromCategoryAndQuery(target.id, '')
-    setHeaderStates(prevState => ({
-      ...prevState,
-      searchResult: responseCategoryApi.results,
-      loading: false
-    }))
-  }
-
-  const clearListResult = () => {
-    setHeaderStates(prevState => ({ ...prevState, searchResult: [] }));
-  }
+ 
 
   const checkButtonState = () => {
     if (headerStates.searchInput === '') {
@@ -98,8 +84,6 @@ export default function Home() {
               : loadingCheck
           }
         </div>
-        <CategoriesList labelCLick={labelCLick} />
-
       </section>
       <div className='footer-home'><Footer id='footer-home' /></div>
 

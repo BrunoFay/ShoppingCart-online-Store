@@ -1,8 +1,8 @@
 import React, { useEffect, useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { getCategories } from '../services/api';
+import { getCategories } from '../../services/api';
 import { Link } from 'react-router-dom';
-import headerContext from '../context/headerContext';
+import headerContext from '../../context/headerContext';
 
 const CATEGORIES_NAMES_TO_REMOVE = ['Imóveis', 'Ingressos', 'Serviços', 'Festas e Lembrancinhas', 'Câmeras e Acessórios', 'Carros, Motos e Outros', 'Brinquedos e Hobbies', 'Antiguidades e Coleções', 'Música, Filmes e Seriados', 'Agro', 'Arte, Papelaria e Armarinho', 'Indústria e Comércio', 'Bebês', 'Ferramentas', 'Construção']
 
@@ -22,6 +22,7 @@ export default function CategoriesList({ labelCLick }) {
 
   return (
     <article className='nav-categories'>
+      categories
       <ul className='container__overlay'>
         {
           categories
