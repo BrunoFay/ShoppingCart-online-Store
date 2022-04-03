@@ -1,0 +1,59 @@
+.products-incart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 2%;
+  background-color: #ffffff;
+}
+
+.products-incart .products-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 80vw;
+  background-color: #ffffff;
+}
+
+.remove-cart-item {
+
+}
+
+.remove-cart-item:hover {
+  
+}
+
+.quantity {
+  
+}
+
+.price-item {
+ 
+}
+
+.shoppingCart {
+
+}
+
+.shoppingCart .ad {
+
+}
+
+.ad {
+
+}
+
+.ad:hover {
+  
+}
+
+.scroll-itens {
+
+}
+
+#removeCart {
+
+
+}

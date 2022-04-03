@@ -2,7 +2,7 @@
 .home-containers {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap:0em;
   align-items: center;
   height: 100vh;
   width: 100vw;

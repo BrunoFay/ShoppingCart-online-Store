@@ -28,7 +28,6 @@ code {
     monospace;
 }
 
-/* products cards */
 
 
 
@@ -136,83 +135,7 @@ code {
 
 
 
-/* Podutos no carrinho */
 
-.products-incart {
-  display: flex;
-  margin: 1em auto;
-  justify-content: space-between;
-  background-color: whitesmoke;
-  border: 1px solid;
-  border-radius: 3px;
-  width: 35vw;
-}
-
-.products-incart .products-container {
-  box-shadow: none;
-}
-
-.remove-cart-item {
-  height: 20%;
-  border: none;
-  font-size: x-large;
-  color: white;
-  border-radius: 3px;
-  background-color: rgb(233, 7, 7);
-  opacity: 0.5;
-}
-
-.remove-cart-item:hover {
-  opacity: 1;
-}
-
-.quantity {
-  margin: 0 1vw;
-}
-
-.price-item {
-  margin: 2em auto;
-  font-size: x-large;
-}
-
-.shoppingCart {
-  display: flex;
-  justify-content: space-around;
-}
-
-.shoppingCart .ad {
-  width: 30vh;
-  height: 100vh;
-  background: content-box;
-}
-
-.ad {
-  max-width: 80em;
-  max-height: 17vh;
-  margin-left: 35%;
-}
-
-.ad:hover {
-  border: solid 2px black;
-}
-
-.scroll-itens {
-  overflow-y: auto;
-  overflow-x: none;
-  min-height: 66.2vh;
-  max-height: 150vh;
-}
-
-#removeCart {
-  margin-top: 5em;
-  border-radius: 7px;
-  font-size: medium;
-  background-color: red;
-  color: white;
-  border: unset;
-  font-weight: 700;
-
-}
 
 /* checkout */
 .checkout-button {

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ProductsCard from './ProductsCard';
 import ButtonsQuantity from '../buttons/ButtonsQuantity';
 import productDetailsContext from '../../context/productDetailsContext';
+import './productsInCart.css';
 
 const INITIAL_STATE = {
   total: 0,
