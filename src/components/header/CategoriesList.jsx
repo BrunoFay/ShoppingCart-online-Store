@@ -21,27 +21,19 @@ export default function CategoriesList({ labelCLick }) {
   }, [])
 
   return (
-    <article className='nav-categories'>
-      categories
-      <ul className='container__overlay'>
-        {
-          categories
-            .map((category) => (
-              <li key={category.id}>
-                <Link
-                  type='button'
-                  id={category.id}
-                  data-testid='category'
-                  onClick={labelCLick}
-                  to=''
-                >
-                  {category.name}
-                </Link>
-              </li>
-            ))}
-      </ul>
-
-    </article>
+    <select onChange={labelCLick}  className='container__overlay'>
+      <option value="">Categorias</option>
+      {
+        categories
+          .map((category) => (
+            <option
+              key={category.id}
+              type='button'
+              value={category.id}>
+              {category.name}
+            </option>
+          ))}
+    </select>
   );
 }
 

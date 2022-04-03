@@ -33,8 +33,6 @@ export default function ProductProvider({ children }) {
     addLocalStorage('shoppingCart', arrayCartItens);
   }
 
-console.log(productStates.itensInCart);
-
   const contextValues = {
      productStates,
      setProductStates,

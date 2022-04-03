@@ -29,128 +29,10 @@ code {
 }
 
 /* products cards */
-.image-card {
-  max-width: 7em;
-  max-height: 8em;
-  margin: 1em 25%;
-}
-
-.products-container {
-
-  border-radius: 2em;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  margin: 2em;
-  justify-content: space-between;
-  max-width: 13em;
-  text-align: center;
-  background: white;
-  transition: all 0.2s;
-  transform: scale(0.97)
-}
-
-.products-container a {
-
-  color: rgb(238 13 13);
-
-}
-
-.products-container:hover {
-  box-shadow: 0px 6px 19px rgba(0, 0, 0, 0.637);
-  -webkit-box-shadow: 0px 9px 19px rgba(0, 0, 0, 0.548);
-  -moz-box-shadow: 0px 9px 19px rgba(0, 0, 0, 0.637);
-  transform: scale(1);
-}
-
-.products-container button {
-  margin: 1em auto;
-  max-width: 7em;
-  border-radius: 3px;
-  height: 2em;
-  background-color: #FEEA59;
-  border: 1px solid black;
-  font-weight: bold;
-  color: #21162c;
-  opacity: 0.7;
-  border: unset;
-  box-shadow: violet 1px 1px 1px;
-
-}
-
-.products-container button:hover {
-  opacity: 1;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 18%;
 
 
-}
-
-.container h1 {
-  margin: 0 13em;
-  background: none;
-}
-
-.title-product {
-  margin: 0.5em;
-  font-size: small;
-}
-
-.title-product-all {
-  color: grey;
-  font-style: italic;
-
-}
-
-.product-price {
-  font-size: larger;
-}
-
-.freeShipping {
-  color: rgb(31, 168, 31);
-}
-
-/* home */
 
 
-.home-containers {
-  display: flex;
-
-}
-
-.nav-categories {
-  position: fixed;
-  left: 0.2em;
-  top: 5.1em;
-  background-color: rgb(80, 83, 77);
-  box-shadow: 2px 2px 2px rgba(14, 13, 13, 0.582);
-  max-width: 15em;
-  max-height: 53em;
-  border-radius: 0.2em;
-
-}
-
-.categories-label {
-  color: aliceblue;
-}
-
-li {
-  margin: 0.5em 0.7em 0.6em 0;
-  list-style-type: none;
-
-}
-
-li a:hover {
-  color: white;
-}
-
-li a {
-  color: rgba(197, 203, 209, 0.719);
-}
 
 
 /* pagina detalhes */
@@ -166,7 +48,7 @@ li a {
 
 }
 
-.shipping, .freeShipping {
+.shipping {
   font-size: large;
   text-shadow: 2px 2px 2px rgba(160, 145, 145, 0.582);
 }
@@ -193,9 +75,7 @@ li a {
 
 }
 
-#home {
-  margin-right: 55%;
-}
+
 
 
 .details-pag {
@@ -254,43 +134,7 @@ li a {
   margin-left: 6em;
 }
 
-footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  margin-top: 10vh;
-  margin-bottom: 0;
-  height: 3em;
-  position: inherit;
-  border-bottom: none;
-  border-top: 1px solid black;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  color: aliceblue;
 
-}
-
-footer .logo-loading {
-  margin: 0;
-  animation: none;
-  height: 5vh;
-  width: 2vw;
-}
-
-.footer-home {
-  margin-top: 74vh;
-
-}
-
-footer nav {
-  display: flex;
-}
-
-footer img {
-  margin-top: 1vh;
-  height: 2em;
-  width: 2em;
-}
 
 /* Podutos no carrinho */
 

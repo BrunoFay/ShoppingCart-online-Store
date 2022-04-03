@@ -54,12 +54,13 @@ function HeaderProvider({ children }) {
   const labelCLick = async ({ target }) => {
     clearListResult();
     setHeaderStates(prevState => ({ ...prevState, loading: true }))
-    const responseCategoryApi = await getProductsFromCategoryAndQuery(target.id, '')
+    const responseCategoryApi = await getProductsFromCategoryAndQuery(target.value, '')
     setHeaderStates(prevState => ({
       ...prevState,
       searchResult: responseCategoryApi.results,
       loading: false
     }))
+  
   }
 
   const clearListResult = () => {

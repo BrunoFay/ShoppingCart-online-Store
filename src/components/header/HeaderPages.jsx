@@ -5,7 +5,7 @@ import { BsSearch } from 'react-icons/bs';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import productDetailsContext from '../../context/productDetailsContext';
 import CategoriesList from './CategoriesList'
-import headerPages from './headerPages.css'
+import  './headerPages.css'
 
 function HeaderPages() {
   const {
@@ -16,7 +16,7 @@ function HeaderPages() {
     labelCLick
   } = useContext(headerContext)
 
-  const { getLocalStorage, productStates: { itensInCart } } = useContext(productDetailsContext)
+  const { getLocalStorage} = useContext(productDetailsContext)
 
   useEffect(() => {
     getLocalStorage()
@@ -24,10 +24,10 @@ function HeaderPages() {
 
 
 
-  const NUMBER_OF_ITENS_IN_CART = itensInCart && itensInCart.length;
+
 
   return (
-    <header>
+    <header className='responsive-header'>
       <h1>shoppingCart</h1>
       <div className='searchDiv'>
         <section>
@@ -59,7 +59,6 @@ function HeaderPages() {
           type="submit"
 
         >
-          {NUMBER_OF_ITENS_IN_CART}
           <RiShoppingCartLine />
         </Link>
 
