@@ -1,3 +1,7 @@
+
+
+
+
 body {
   margin: 0;
   padding: 0;
@@ -7,7 +11,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgba(0, 0, 0, .1);
-
+      --mainColor:#0e2e97e8;
+      --mainColorButton:#3c5fd4d5;
+      
 }
 
 textarea {
@@ -133,25 +139,6 @@ code {
   margin-left: 6em;
 }
 
-
-
-
-
-/* checkout */
-.checkout-button {
-  position: fixed;
-  margin-left: 55vw;
-  border: black 2px solid;
-  padding: 1%;
-  background-color: #3E5992;
-  border-radius: 7px;
-  border: unset;
-}
-
-.checkout-button a {
-  color: #ececeb;
-  font-weight: 700;
-}
 
 .checkout-main {
   display: flex;

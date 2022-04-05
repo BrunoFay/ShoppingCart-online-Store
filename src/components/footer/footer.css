@@ -1,6 +1,6 @@
 @media only screen and (max-width: 600px) {
 footer{
-  background-color: #df0c0c;
+  background-color: var(--mainColor);
   text-align: center;
   font-size: 14px;
   color: #777;

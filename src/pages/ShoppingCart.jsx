@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ProductsInCart from '../components/products/ProductsInCart';
 import Footer from '../components/footer/Footer';
@@ -35,12 +35,22 @@ export default function ShoppingCart() {
   return (
     <>
       <HeaderPages />
-      <main className='shoppingCart' value={''}>
+      <div className='checkout-button'>
         <button
-          className='checkout-button'
           id='removeCart'
           onClick={() => removeCartLocalstorage()}
-        >Limpar Carrinho</button>
+        >
+          Limpar Carrinho
+        </button>
+        <Link
+          to="/checkout"
+          type="submit"
+          data-testid="checkout-products"
+        >
+          Finalizar compra
+        </Link>
+      </div>
+      <main className='shoppingCart' value={''}>
         <section className='scroll-itens'>
 
           {!itensInCart
@@ -59,15 +69,7 @@ export default function ShoppingCart() {
             ))}
 
         </section>
-        <div className='checkout-button'>
-          <Link
-            to="/checkout"
-            type="submit"
-            data-testid="checkout-products"
-          >
-            Finalizar compra
-          </Link>
-        </div>
+
 
       </main>
 

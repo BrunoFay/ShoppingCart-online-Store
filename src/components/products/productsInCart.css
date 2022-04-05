@@ -1,59 +1,110 @@
 .products-incart {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  padding: 2%;
   background-color: #ffffff;
+  margin:0 1rem;
 }
 
 .products-incart .products-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  width: 80vw;
-  background-color: #ffffff;
-}
-
-.remove-cart-item {
 
 }
 
-.remove-cart-item:hover {
-  
+/* div de buttons */
+.checkout-button {
+  display: flex;
+  border: black 2px solid;
+  padding: 0.5rem;
+  border-radius: 7px;
+  border: unset;
+  gap: 1em;
+  justify-content: center;
+  text-align: center;
 }
 
-.quantity {
-  
+.scroll-itens .product-price {
+  visibility: hidden;
+}
+
+.scroll-itens .buttons-quantity {
+  position: relative;
+  bottom: 4.5rem;
+  left: 25vw;
+}
+.scroll-itens .buttons-quantity button{
+  border-radius: 7px;
+  border: unset;
+  padding: 5px 10px;
+  font-size: 1.3rem;
+  background-color: var(--mainColorButton);
+  color: #ffffff;
+}
+.scroll-itens .buttons-quantity button:hover{
+  background-color: var(--mainColor);
+}
+
+.scroll-itens .title-product {
+  color: red;
+  position: relative;
+  bottom: 1rem;
+  font-size: 1rem;
+}
+
+.scroll-itens .card-infos {
+  margin-top: 1rem;
 }
 
 .price-item {
- 
+  padding: 0 0.5rem;
 }
 
-.shoppingCart {
+.checkout-button>button, .checkout-button a {
+  background-color: #e42604f5;
+  border: none;
+  font-size: 1rem;
+
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0.4rem;
+  color: #ececeb;
+  font-weight: 700;
 
 }
 
-.shoppingCart .ad {
-
-}
-
-.ad {
-
-}
-
-.ad:hover {
-  
+.checkout-button>a {
+  background-color: #03344bef;
 }
 
 .scroll-itens {
-
+  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.scroll-itens button{
+  cursor: pointer;
+}
+.scroll-itens a {
+  color: #4ff004;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.remove-cart-item {
+  position: relative;
+  padding-left: 0.5rem;
+  height: 100%;
+  width: 1.5rem;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
 }
 
-#removeCart {
-
-
+.remove-cart-item:hover {
+  background-color: #e42604f5;
+  color: #ececeb;
 }

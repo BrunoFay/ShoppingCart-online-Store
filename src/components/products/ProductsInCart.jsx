@@ -36,7 +36,7 @@ export default function ProductsInCart({
         ...prevState,
         countItens: prevState.countItens - 1,
       }));
-      
+
 
     }
   }
@@ -66,7 +66,6 @@ export default function ProductsInCart({
         <ProductsCard
           product={product}
         />
-      </div>
       <div className='buttons-quantity'>
         <div>
           <ButtonsQuantity
@@ -75,7 +74,9 @@ export default function ProductsInCart({
           <span
             data-testid="shopping-cart-product-quantity"
           >
-            {countItens}
+            <span className='price-item'>  R$ {(countItens * price).toFixed(2)}
+            </span>
+
           </span>
           <ButtonsQuantity
             countProducts={countProducts}
@@ -84,7 +85,7 @@ export default function ProductsInCart({
 
         </div>
 
-        <span className='price-item'>  R$ {(countItens * price).toFixed(2)}</span>
+      </div>
       </div>
       <button type="button" onClick={removeItens} className='remove-cart-item'>x</button>
 

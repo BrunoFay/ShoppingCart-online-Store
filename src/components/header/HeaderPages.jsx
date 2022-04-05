@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import headerContext from '../../context/headerContext';
 import { BsSearch } from 'react-icons/bs';
 import { RiShoppingCartLine } from 'react-icons/ri';
+import { IoHomeOutline } from 'react-icons/io5';
+
 import productDetailsContext from '../../context/productDetailsContext';
 import CategoriesList from './CategoriesList'
 import  './headerPages.css'
@@ -30,7 +32,17 @@ function HeaderPages() {
     <header className='responsive-header'>
       <h1>shoppingCart</h1>
       <div className='searchDiv'>
-        <section>
+      <nav className='link-home'>
+        <Link
+          to="/"
+          type="submit"
+
+        >
+          <IoHomeOutline />
+        </Link>
+
+      </nav>
+        <section className='searchSection'>
           <input
             value={searchInput}
             onChange={handleChange}
