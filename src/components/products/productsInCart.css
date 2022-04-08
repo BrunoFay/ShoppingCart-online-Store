@@ -30,10 +30,32 @@
   visibility: hidden;
 }
 
+.scroll-itens .freeShipping {
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  bottom: 6rem;
+  transform: rotate(-45deg);
+  font-size: small;
+  text-shadow: 0 0 1px #000;
+}
+.shoppingCart{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+}
+.shoppingCart .card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .scroll-itens .buttons-quantity {
   position: relative;
-  bottom: 4.5rem;
-  left: 25vw;
+  bottom: 3.5rem;
+  left: 13vw;
 }
 .scroll-itens .buttons-quantity button{
   border-radius: 7px;
@@ -48,16 +70,25 @@
 }
 
 .scroll-itens .title-product {
-  color: red;
-  position: relative;
-  bottom: 1rem;
+  color: rgb(216, 53, 175);
+  height: 3.5rem;
   font-size: 1rem;
 }
 
 .scroll-itens .card-infos {
-  margin-top: 1rem;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:0 1rem;
 }
 
+.scroll-itens > div{
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .price-item {
   padding: 0 0.5rem;
 }
@@ -66,7 +97,6 @@
   background-color: #e42604f5;
   border: none;
   font-size: 1rem;
-
   cursor: pointer;
   border-radius: 3px;
   padding: 0.4rem;
@@ -79,11 +109,17 @@
   background-color: #03344bef;
 }
 
-.scroll-itens {
+.shoppingCart .scroll-itens {
   margin-top: 0.3rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-height: 90vh;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #090111;
+  align-items: center;
 }
 .scroll-itens button{
   cursor: pointer;

@@ -73,7 +73,7 @@ export default function ShoppingCart() {
 
       </main>
 
-      <Footer />
+      <Footer className='footer-shoppingCart'/>
     </>
   );
 

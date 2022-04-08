@@ -21,7 +21,7 @@
 
 }
 
-.card-container {
+.home-containers .card-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,6 +55,9 @@
   color: rgb(31, 1, 26);
   font-size: 1.2em;
   max-width: fit-content;
+  overflow: hidden;
+}
+.title-product:hover {
   overflow: auto;
 }
 
