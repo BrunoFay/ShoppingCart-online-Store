@@ -5,7 +5,7 @@ import Footer from '../components/footer/Footer';
 import Boleto from '../components/paymentMethods/Boleto';
 import CreditCard from '../components/paymentMethods/CreditCard';
 import productDetailsContext from '../context/productDetailsContext';
-
+import '../pages/checkout.css';
 
 const SERIAL_NUMBER_BOLETO = 9 ** 16
 const RANDOM_NUMER = Math.floor(Math.random() * SERIAL_NUMBER_BOLETO) + SERIAL_NUMBER_BOLETO
@@ -63,8 +63,6 @@ export default function Checkout() {
     <>
       <HeaderPages />
       <main className='checkout-main'>
-
-
         <section className='section-itens-checkout'>
           {
             itensInCart && itensInCart.map((e) => (
