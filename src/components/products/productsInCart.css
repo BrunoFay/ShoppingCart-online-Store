@@ -5,8 +5,14 @@
   width: 100%;
   background-color: #ffffff;
   margin:0 1rem;
+  border-radius: 7px;
 }
-
+.scroll-itens > div:nth-child(1){
+  margin-top: 0.2rem;
+}
+.scroll-itens > div:last-child{
+  margin-bottom: 1rem;
+}
 .products-incart .products-container {
   display: flex;
   flex-direction: column;
@@ -94,7 +100,7 @@
 }
 
 .checkout-button>button, .checkout-button a {
-  background-color: #e42604f5;
+  background-color: var(--redCollorRemovebtn);
   border: none;
   font-size: 1rem;
   cursor: pointer;
@@ -118,7 +124,6 @@
   width: 100vw;
   overflow-y: auto;
   overflow-x: hidden;
-  background: #090111;
   align-items: center;
 }
 .scroll-itens button{
@@ -138,9 +143,14 @@
   border: none;
   font-size: 1rem;
   text-align: center;
+  background-color:var(--redCollorRemovebtn);
+  color: #ececeb;
+  opacity: 0.8;
+  transition: all 200ms ease-in-out;
+  border-radius: 0 7px 7px 0px;
 }
 
 .remove-cart-item:hover {
+  opacity: 1;
   background-color: #e42604f5;
-  color: #ececeb;
 }
