@@ -66,14 +66,16 @@ export default function Checkout() {
         <section className='section-itens-checkout'>
           {
             itensInCart && itensInCart.map((e) => (
-              <div key={e.item.id} className='checkout-itens'>
+              <section key={e.item.id} className='checkout-itens'>
                 <img src={e.item.thumbnail} alt={e.item.title} />
-                <span className='title-product-all'>{e.item.title}</span>
-                <p>
-                  R$
-                  {(e.count * e.item.price).toFixed(2)}
-                </p>
-              </div>
+               <div>
+                  <span className='checkout-itens-title'>{e.item.title}</span>
+                  <p>
+                    R$
+                    {(e.count * e.item.price).toFixed(2)}
+                  </p>
+               </div>
+              </section>
             ))
           }
         </section>
@@ -88,7 +90,7 @@ export default function Checkout() {
               <option name="cartao" value='cartao'>Cartão de Crédito</option>
               <option name="boleto" value='boleto'>Boleto</option>
             </select>
-          {select === 'boleto' ?
+          {select !== 'boleto' ?
             <Boleto
               select={select}
               handleChange={handleChange}

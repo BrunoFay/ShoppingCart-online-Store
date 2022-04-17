@@ -1,9 +1,10 @@
 .products-incart {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 100%;
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--cardBackground);
   margin:0 1rem;
   border-radius: 7px;
 }
@@ -83,21 +84,14 @@
   color: var(--collorPrice); 
   font-size: 2em;
 }
-.scroll-itens{
 
-}
-.scroll-itens{
-
-}
-.scroll-itens{
-
-} 
 .scroll-itens .card-infos {
   width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding:0 1rem;
+  text-align: center;
 }
 
 .scroll-itens > div{
@@ -138,6 +132,9 @@
   overflow-y: auto;
   overflow-x: hidden;
   align-items: center;
+}
+.scroll-itens::-webkit-scrollbar,.scroll-itens .title-product::-webkit-scrollbar {
+  display: none;
 }
 .scroll-itens button{
   cursor: pointer;

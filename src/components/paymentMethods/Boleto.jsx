@@ -91,30 +91,32 @@ export default function Boleto({
         <button onClick={(e) => e.preventDefault()} className='buy-button' type='submit'>Finalizar</button>
       </form>
       <div className='boleto'>
-        <div className='boleto-titulo'>
+        <div className='boleto-top'>
           <span> shoppingCart</span>
+          <span className='boleto-codigo'>
+          {codeBoleto}
+        </span>
         </div>
-        <div className='boleto-infos'>
-          <span>numero de itens:{quantidadeItens}</span>
-        </div>
+        <div className='boleto-middle-1'>
+          <span>N de itens:{quantidadeItens}</span>
         <div className='boleto-valores'>
           <span>(10%) valor minimo:{(totalValue * 0.10).toFixed(2)} R$ </span>
           <span>(0) Descontos: 0</span>
           <span>(100%) valor total:{totalValue} R$</span>
-
         </div>
-        <div className='boleto-barras'>
-
+        </div>
+        <div className='boleto-middle-2'>
+         <div>
+            <span>{nome ? nome.toUpperCase() : 'NOME'}</span>
+            <span>{cpf ? cpf : 'CPF'}</span>
+         </div>
+          <div>
+            <span>{endereco ? endereco : 'ENDEREÇO'}</span>
+            <span>{cep ? cep : 'CEP'}</span>
+          </div>
+        </div>
+        <div className='boleto-bottom'>
           <img src='https://www.tag-id.com.br/wp-content/uploads/2019/06/barcode-306926_640-e1560291480556.png' />
-        </div>
-        <div className='boleto-usuario'>
-          <span>{nome ? nome.toUpperCase() : 'NOME'}</span>
-          <span>{cpf ? cpf : 'CPF'}</span>
-          <span>{endereco ? endereco : 'ENDEREÇO'}</span>
-          <span>{cep ? cep : 'CEP'}</span>
-        </div>
-        <div className='boleto-codigo'>
-          {codeBoleto}
         </div>
       </div>
     </>

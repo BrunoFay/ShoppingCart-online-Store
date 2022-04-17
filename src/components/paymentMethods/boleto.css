@@ -1,23 +1,29 @@
-.boleto {
 
+.boleto{
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  width: 75vw;
+  margin: 1rem 0;
 }
-
-.boleto-titulo {
-  
+.boleto-top {
   border-right: 1px black solid;
   background-color: rgb(60, 37, 122);
   color: whitesmoke;
   border-bottom: 1px black solid;
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
 }
-
+.boleto-top  span:first-child {
+  color: rgb(19, 141, 25);
+  border-right:solid 1px black;
+}
 .boleto-infos {
-  
-
   align-self: center;
 }
 
 .boleto-valores {
- 
   border-top: 1px black solid;
   display: flex;
   flex-direction: column;
@@ -26,40 +32,40 @@
 }
 
 .boleto-barras {
-  
   border-top: 1px black solid;
-
 }
 
-.boleto-barras img {
-
-  width: 20vw;
-  max-height: 10vh;
+.boleto-bottom img {
+  width: 50vw;
+  height: 7vh;
 }
 
-.boleto-usuario {
-  
+.boleto-middle-2 {
   background-color: rgb(60, 37, 122);
   border-top: 1px black solid;
-  display: grid;
-
+  display: flex;
+  justify-content: space-evenly;
   color: whitesmoke;
+  height: 3rem;
+text-align: left;
+}
+.boleto-middle-2 div{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 
 }
-
-.boleto-usuario span, .boleto-infos span {
-  margin-left: 1vw;
-  margin-top: 1vh;
+.boleto-middle-1 {
+  display: flex;
+  background-color: rgb(148, 138, 175);
+}
+.boleto-middle-1 > span {
+  background-color: rgb(122, 64, 37);
+  flex: 30%;
+}
+.boleto-middle-1 div{
+  padding: 5px;
+  flex: 70%;
 }
 
-.boleto-codigo {
-  text-align: center;
-  font-size: x-large;
-  background-color: rgb(60, 37, 122);
-  color: whitesmoke;
-}
 
-.boleto-titulo span {
-  position: relative;
-  font-size: x-large;
-}
