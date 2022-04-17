@@ -10,6 +10,7 @@ body {
   background: rgba(0, 0, 0, .1);
       --mainColor:#0e2e97e8;
       --mainColorButton:#3c5fd4d5;
+      --collorPrice:rgb(106, 99, 211);
       --redCollorRemovebtn:#e42604f5;
       
 }
@@ -31,12 +32,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-
-
-
-
 
 /* pagina detalhes */
 .card-details {
@@ -134,9 +129,6 @@ code {
   height: 2em;
   margin-left: 6em;
 }
-
-
-
 
 /* loading */
 .logo-loading {

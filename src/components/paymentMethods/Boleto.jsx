@@ -1,4 +1,5 @@
 import React from 'react'
+import './boleto.css'
 
 
 export default function Boleto({
@@ -19,7 +20,7 @@ export default function Boleto({
       <form>
 
         <input
-          id="cheackoutName"
+         className="cheackoutName"
           type="text"
           name="nome"
           data-testid="checkout-fullname"
@@ -30,7 +31,7 @@ export default function Boleto({
 
 
         <input
-          id="cheackoutEmail"
+         className="cheackoutEmail"
           type="email"
           name="email"
           data-testid="checkout-email"
@@ -42,7 +43,7 @@ export default function Boleto({
 
 
         <input
-          id="cheackoutCPF"
+         className="cheackoutCPF"
           type="text"
           name="cpf"
           data-testid="checkout-cpf"
@@ -54,7 +55,7 @@ export default function Boleto({
 
 
         <input
-          id="cheackoutTelefone"
+         className="cheackoutTelefone"
           type="tel"
           name="telefone"
           data-testid="checkout-phone"
@@ -65,7 +66,7 @@ export default function Boleto({
 
 
         <input
-          id="cheackoutCEP"
+         className="cheackoutCEP"
           type="text"
           name="cep"
           data-testid="checkout-cep"
@@ -77,7 +78,7 @@ export default function Boleto({
 
 
         <input
-          id="cheackoutEndereço"
+         className="cheackoutEndereço"
           type="text"
           name="endereco"
           data-testid="checkout-address"

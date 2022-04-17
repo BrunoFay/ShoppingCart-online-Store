@@ -78,15 +78,16 @@ export default function Checkout() {
           }
         </section>
         <p className='total-p'>
-          Soma total: R$
+          Total: R$ {' '}
           {totalValue}
         </p>
-        <section >
+        <section className='paymentsMethods-section' >
           <h1>Formas de pagamento</h1>
-          <select name='select' value={select} onChange={handleChange}>
-            <option name="cartao" value='cartao'>Cartão de Crédito</option>
-            <option name="boleto" value='boleto'>Boleto</option>
-          </select>
+         <section className='paymentsMethods-title'>
+            <select name='select' value={select} onChange={handleChange}>
+              <option name="cartao" value='cartao'>Cartão de Crédito</option>
+              <option name="boleto" value='boleto'>Boleto</option>
+            </select>
           {select === 'boleto' ?
             <Boleto
               select={select}
@@ -112,6 +113,7 @@ export default function Checkout() {
               cvv={cvv}
             />
           }
+          </section>
         </section>
       </main>
       <Footer />

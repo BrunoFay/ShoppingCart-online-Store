@@ -1,0 +1,65 @@
+.boleto {
+
+}
+
+.boleto-titulo {
+  
+  border-right: 1px black solid;
+  background-color: rgb(60, 37, 122);
+  color: whitesmoke;
+  border-bottom: 1px black solid;
+}
+
+.boleto-infos {
+  
+
+  align-self: center;
+}
+
+.boleto-valores {
+ 
+  border-top: 1px black solid;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.boleto-barras {
+  
+  border-top: 1px black solid;
+
+}
+
+.boleto-barras img {
+
+  width: 20vw;
+  max-height: 10vh;
+}
+
+.boleto-usuario {
+  
+  background-color: rgb(60, 37, 122);
+  border-top: 1px black solid;
+  display: grid;
+
+  color: whitesmoke;
+
+}
+
+.boleto-usuario span, .boleto-infos span {
+  margin-left: 1vw;
+  margin-top: 1vh;
+}
+
+.boleto-codigo {
+  text-align: center;
+  font-size: x-large;
+  background-color: rgb(60, 37, 122);
+  color: whitesmoke;
+}
+
+.boleto-titulo span {
+  position: relative;
+  font-size: x-large;
+}

@@ -53,7 +53,7 @@
 
 .title-product {
   color: rgb(31, 1, 26);
-  font-size: 1.2em;
+  font-size: 0.9rem;
   max-width: fit-content;
   overflow: hidden;
 }
@@ -61,25 +61,16 @@
   overflow: auto;
 }
 
-.product-price {
-  color: rgb(106, 99, 211);
-  font-size: 2.3em;
+.home-containers .product-price {
+  color: var(--collorPrice);
+  font-size: 1.5em;
 }
 
 .freeShipping {
   font-size: 1rem;
 }
 
-.card-infos {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 7rem;
-  width: 100%;
-  padding: 2%;
-  background-color: #ffffff;
-}
+
 
 .card-infos div {
   display: flex;
@@ -89,6 +80,11 @@
 
 .freeShipping {
   color: rgb(31, 168, 31);
+  text-shadow: 0 0 1px #000;
+}
+.home-containers a{
+color: #308b06;
+font-weight: 700;
 }
 
 }

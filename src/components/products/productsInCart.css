@@ -43,7 +43,7 @@
   bottom: 6rem;
   transform: rotate(-45deg);
   font-size: small;
-  text-shadow: 0 0 1px #000;
+ 
 }
 .shoppingCart{
   display: flex;
@@ -76,11 +76,22 @@
 }
 
 .scroll-itens .title-product {
-  color: rgb(216, 53, 175);
   height: 3.5rem;
   font-size: 1rem;
 }
+.scroll-itens .product-price {
+  color: var(--collorPrice); 
+  font-size: 2em;
+}
+.scroll-itens{
 
+}
+.scroll-itens{
+
+}
+.scroll-itens{
+
+} 
 .scroll-itens .card-infos {
   width: 50vw;
   display: flex;
@@ -95,8 +106,10 @@
   align-items: center;
   justify-content: center;
 }
-.price-item {
-  padding: 0 0.5rem;
+.scroll-itens .price-item {
+  padding: 0 0.3rem;
+  font-size: 1.4rem;
+  color: var(--collorPrice);
 }
 
 .checkout-button>button, .checkout-button a {
@@ -130,7 +143,7 @@
   cursor: pointer;
 }
 .scroll-itens a {
-  color: #4ff004;
+  color: #308b06;
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
