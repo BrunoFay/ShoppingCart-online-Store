@@ -1,5 +1,5 @@
 
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import headerContext from './headerContext';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -20,16 +20,15 @@ function HeaderProvider({ children }) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
-  const checkLocation =async () => {
+  const checkLocation = async () => {
+    console.log(pathname);
     if(pathname !== '/') {
-      await handleClick ();
-      return navigate("/");
+      navigate('/'); 
     }
   }
   const handleClick = async () => {
-    
+   await checkLocation()
     setHeaderStates(prevState => ({ ...prevState, loading: true }))
-    checkLocation()
     
     await getProductsFromCategoryAndQuery('', headerStates.searchInput)
       .then((data) => setHeaderStates(prevState => ({

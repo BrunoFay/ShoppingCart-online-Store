@@ -117,12 +117,12 @@
 
 .checkout-itens p {
   color: var(--collorPrice);
-  font-size: 1.5em;
+  font-size: 1.5rem;
 
 }
 
 .checkout-itens img {
-  height: 7rem;
+  height: 6rem;
 }
 .checkout-itens div{
  display: flex;

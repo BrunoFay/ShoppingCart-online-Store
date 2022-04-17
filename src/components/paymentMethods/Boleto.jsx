@@ -107,12 +107,12 @@ export default function Boleto({
         </div>
         <div className='boleto-middle-2'>
          <div>
-            <span>{nome ? nome.toUpperCase() : 'NOME'}</span>
-            <span>{cpf ? cpf : 'CPF'}</span>
+            <span>{nome ? nome.toUpperCase() : 'NOME:'}</span>
+            <span>{cpf ? cpf : 'CPF:'}</span>
          </div>
           <div>
-            <span>{endereco ? endereco : 'ENDEREÇO'}</span>
-            <span>{cep ? cep : 'CEP'}</span>
+            <span>{endereco ? endereco : 'ENDEREÇO:'}</span>
+            <span>{cep ? cep : 'CEP:'}</span>
           </div>
         </div>
         <div className='boleto-bottom'>

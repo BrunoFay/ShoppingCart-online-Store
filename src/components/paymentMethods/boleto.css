@@ -24,15 +24,15 @@
 }
 
 .boleto-valores {
-  border-top: 1px black solid;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: space-around;
 }
 
-.boleto-barras {
-  border-top: 1px black solid;
+.boleto-bottom {
+  background-color: rgb(219, 217, 226);
+
 }
 
 .boleto-bottom img {
@@ -42,25 +42,24 @@
 
 .boleto-middle-2 {
   background-color: rgb(60, 37, 122);
-  border-top: 1px black solid;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: start;
   color: whitesmoke;
   height: 3rem;
-text-align: left;
+  font-size: small;
 }
 .boleto-middle-2 div{
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
+  width: 50vw;
+  padding: 2px 0;
 }
 .boleto-middle-1 {
   display: flex;
-  background-color: rgb(148, 138, 175);
+  background-color: rgb(219, 217, 226);
 }
 .boleto-middle-1 > span {
-  background-color: rgb(122, 64, 37);
   flex: 30%;
 }
 .boleto-middle-1 div{
