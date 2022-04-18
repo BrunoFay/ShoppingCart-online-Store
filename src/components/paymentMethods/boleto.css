@@ -1,4 +1,4 @@
-
+@media only screen and (max-width: 600px) {
 .boleto{
   display: flex;
   flex-direction: column;
@@ -66,5 +66,4 @@
   padding: 5px;
   flex: 70%;
 }
-
-
+}

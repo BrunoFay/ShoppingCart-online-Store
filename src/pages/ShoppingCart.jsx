@@ -52,27 +52,22 @@ export default function ShoppingCart() {
       </div>
       <main className='shoppingCart' value={''}>
         <section className='scroll-itens'>
-
           {!itensInCart
-            ? <h2 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h2>
+            ? (
+            <h2 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h2>
+            )
             : itensInCart.map((item, index) => (
               <div key={index}>
-
                 <ProductsInCart
                   product={item.item}
                   countI={item.count}
                   removeItens={(e) => removeItens(e)
                   }
                 />
-
               </div>
             ))}
-
         </section>
-
-
       </main>
-
       <Footer className='footer-shoppingCart'/>
     </>
   );

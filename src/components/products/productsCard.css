@@ -56,15 +56,17 @@
 
 .title-product {
   color: rgb(31, 1, 26);
-  font-size: 0.9rem;
-  max-width: fit-content;
+  font-size: 1rem;
+  height: 2.5rem;
   overflow: hidden;
+  transition: ease-in-out 0.2s;
 }
 .title-product:hover {
   overflow: auto;
 }
 
 .home-containers .product-price {
+  height: max-content;
   color: var(--collorPrice);
   font-size: 1.5em;
 }
@@ -78,22 +80,16 @@
 }
 .home-containers .card-infos{
   align-items: center;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     height: 7rem;
-    width: 100%;
     padding: 2%;
-    background-color: #ffffff;
 }
 .freeShipping {
   color: rgb(31, 168, 31);
   text-shadow: 0 0 1px #000;
 }
-.home-containers a{
-color: #308b06;
-font-weight: 700;
-}
+
 
 }

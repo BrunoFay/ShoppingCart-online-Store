@@ -1,3 +1,4 @@
+@media only screen and (max-width: 600px) {
 .card-credit {
   height: 28vh;
   width: 80vw;
@@ -57,4 +58,5 @@
 
 .info1, .info2 {
   width: 1px;
+}
 }

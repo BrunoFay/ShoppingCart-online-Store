@@ -1,12 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import productDetailsContext from '../../context/productDetailsContext';
 import './productsCard.css';
 export default function ProductsCard({ product }) {
 
   /* chance the name for products card colocar o state do details no contex*/
-  const { setProductStates } = useContext(productDetailsContext)
+
   const {
     shipping: { free_shipping: freeShipping },
     title,
@@ -27,22 +25,14 @@ export default function ProductsCard({ product }) {
       <div className='card-infos'>
         <span className='title-product title-product-all'
         >{title}</span>
-        <div>
-          <span className='product-price'>
-            {`R$ ${price}`}
-          </span>
-          {freeShipping && <span
+        <span className='product-price'>
+          {`R$ ${price}`}
+        </span>
+        {
+          freeShipping && <span
             className='freeShipping'
-            data-testid='free-shipping'>Frete Grátis</span>}
-        </div>
-        <div>
-          <Link
-            to='/product-details'
-            onClick={() => setProductStates((prevState) => ({ ...prevState, productDetail: product }))}
-          >
-            Detalhes
-          </Link>
-        </div>
+            data-testid='free-shipping'>Frete Grátis</span>
+        }
       </div>
     </div>
   );

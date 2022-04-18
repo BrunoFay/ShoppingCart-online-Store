@@ -1,3 +1,4 @@
+@media only screen and (max-width: 600px) {
 .checkout-main {
   display: flex;
   flex-direction: column;
@@ -21,7 +22,6 @@
 .checkout-main section:first-child:hover, .checkout-main section:first-child:focus {
   overflow: auto;
   height: 65vh;
-
 }
 
 .paymentsMethods-section {
@@ -42,7 +42,7 @@
 
 }
 
-.paymentsMethods-section::-webkit-scrollbar,.checkout-itens-title::-webkit-scrollbar {
+.paymentsMethods-section::-webkit-scrollbar, .checkout-itens-title::-webkit-scrollbar {
   display: none;
 }
 
@@ -113,6 +113,7 @@
   background-color: var(--cardBackground);
   border-radius: 7px;
   transition: all 0.2s;
+  gap: 1rem;
 }
 
 .checkout-itens p {
@@ -124,17 +125,22 @@
 .checkout-itens img {
   height: 6rem;
 }
-.checkout-itens div{
- display: flex;
- flex-direction: column;
+
+.checkout-itens div {
+  display: flex;
+  flex-direction: column;
   height: 8em;
-  
+
 }
-.checkout-itens-title{
+
+.checkout-itens-title {
   overflow: auto;
-  height: 5em;
-  width: 11rem;
+  height: 8em;
+  width: 10rem;
+  align-items: center;
+  margin-top: 1rem;
 }
+
 .checkout-itens:hover {
   box-shadow: 0 0 9px 4px rgba(14, 13, 13, 0.582);
 
@@ -142,11 +148,12 @@
 
 .checkout-main section:first-child section:first-child {
   background-color: var(--cardBackground);
-  max-height: 9rem;
+  min-height: 9rem;
   flex-direction: row;
   margin-top: 1rem;
 }
 
 .checkout-main section:first-child section:last-child {
   margin-bottom: 1rem;
+}
 }

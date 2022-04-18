@@ -1,3 +1,4 @@
+@media only screen and (max-width: 600px) {
 .products-incart {
   display: flex;
   justify-content: space-between;
@@ -62,7 +63,7 @@
 .scroll-itens .buttons-quantity {
   position: relative;
   bottom: 3.5rem;
-  left: 13vw;
+  left: 15vw;
 }
 .scroll-itens .buttons-quantity button{
   border-radius: 7px;
@@ -77,8 +78,10 @@
 }
 
 .scroll-itens .title-product {
-  height: 3.5rem;
+ position: relative;
+  bottom: 1rem;
   font-size: 1rem;
+  height: 3.5rem;
 }
 .scroll-itens .product-price {
   color: var(--collorPrice); 
@@ -163,4 +166,5 @@
 .remove-cart-item:hover {
   opacity: 1;
   background-color: #e42604f5;
+}
 }

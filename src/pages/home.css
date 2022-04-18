@@ -1,4 +1,4 @@
-
+@media only screen and (max-width: 600px) {
 .home-containers {
   display: flex;
   flex-direction: column;
@@ -13,3 +13,4 @@
 .home-containers::-webkit-scrollbar{
   display: none;
 } 
+}
