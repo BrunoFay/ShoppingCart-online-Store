@@ -5,7 +5,7 @@ export default function ProductNotFoundMessage({buttonClicked,searchResult}) {
     <>
       {
         (searchResult.length === 0 && buttonClicked)
-          ? <h1> Nenhum produto foi encontrado</h1>
+          ? <h2> Nenhum produto foi encontrado</h2>
           : null
       }
     </>

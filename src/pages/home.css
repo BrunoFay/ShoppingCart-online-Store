@@ -1,8 +1,6 @@
 @media only screen and (max-width: 600px) {
 .home-containers {
-  display: flex;
   flex-direction: column;
-  gap:0em;
   align-items: center;
   height: 100vh;
   width: 100vw;
@@ -10,7 +8,25 @@
 }
 
 
+}
+@media only screen and (min-width: 601px) {
+  .home-containers{
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-self: center;
+    justify-content: center;
+    background-color: black;
+    height: 90vh;
+    align-self: center;
+    justify-self: center;
+  }
+}
+.home-containers{
+  display: flex;
+}
 .home-containers::-webkit-scrollbar{
   display: none;
 } 
+.notFound-message{
+text-align: center;
 }

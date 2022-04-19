@@ -52,22 +52,13 @@ export default function Home() {
 
       <HeaderPages />
       <section className='search-input'>
-
-        <span
-          data-testid="home-initial-message"
-        >
-          Digite algum termo de pesquisa ou escolha uma categoria.
-        </span>
       </section>
 
       <section className='home-containers'>
-
         <ProductNotFoundMessage
           searchResult={searchResult}
           buttonClicked={buttonClicked} />
-
         {loading ? <Loading /> : <HomecardContainer searchResult={searchResult} />}
-
       </section>
       <Footer />
 

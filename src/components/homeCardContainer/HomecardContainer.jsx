@@ -7,7 +7,6 @@ export default function HomecardContainer({searchResult}) {
       {
       searchResult.map((product, index) => (
         <div key={index}
-          data-testid="product"
           className='products-container'>
           <ProductsCard
             product={product}
