@@ -1,10 +1,8 @@
-import React, { useState,useCallback } from 'react'
-import productDetailsContext from './productDetailsContext'
+import React, { useCallback, useState } from 'react'
 import {
-  loadCartArrayLocalStorage,
-  addLocalStorage,
-  loadLocalStorage
+  addLocalStorage, loadCartArrayLocalStorage, loadLocalStorage
 } from '../services/localStorage'
+import productDetailsContext from './productDetailsContext'
 
 const INITIAL_STATE = {
   itensInCart: [],

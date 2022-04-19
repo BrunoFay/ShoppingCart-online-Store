@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import HeaderPages from '../components/header/HeaderPages';
+import React, { useContext, useEffect, useState } from 'react';
 import Footer from '../components/footer/Footer';
+import HeaderPages from '../components/header/HeaderPages';
 import Boleto from '../components/paymentMethods/Boleto';
 import CreditCard from '../components/paymentMethods/CreditCard';
 import productDetailsContext from '../context/productDetailsContext';

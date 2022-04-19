@@ -1,12 +1,12 @@
-import React, { useEffect, useContext } from 'react';
-import './home.css';
-import HeaderPages from '../components/header/HeaderPages';
+import React, { useContext, useEffect } from 'react';
 import Footer from '../components/footer/Footer';
+import HeaderPages from '../components/header/HeaderPages';
+import HomecardContainer from '../components/homeCardContainer/HomecardContainer';
 import Loading from '../components/loading/Loading';
+import ProductNotFoundMessage from '../components/productNotFoundMessage/ProductNotFoundMessage';
 import headerContext from '../context/headerContext';
 import productDetailsContext from '../context/productDetailsContext';
-import ProductNotFoundMessage from '../components/productNotFoundMessage/ProductNotFoundMessage';
-import HomecardContainer from '../components/homeCardContainer/HomecardContainer';
+import './home.css';
 
 export default function Home() {
   const {

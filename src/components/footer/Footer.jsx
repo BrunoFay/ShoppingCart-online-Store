@@ -1,16 +1,12 @@
-import React from 'react'
-import { BsLinkedin } from 'react-icons/bs';
-import { BsGithub } from 'react-icons/bs';
-import './footer.css'
+import React from 'react';
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import './footer.css';
 
 
 export default function Footer() {
-
     return (
         <footer>
-
             <p>Bruno Fay</p>
-
             <div>
                 <a target={'_blank'} href='https://github.com/BrunoFay'>
                     <BsGithub />

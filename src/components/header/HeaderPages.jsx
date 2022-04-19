@@ -1,13 +1,13 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react';
+import { BsSearch } from 'react-icons/bs';
+import { IoHomeOutline } from 'react-icons/io5';
+import { RiShoppingCartLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import headerContext from '../../context/headerContext';
-import { BsSearch } from 'react-icons/bs';
-import { RiShoppingCartLine } from 'react-icons/ri';
-import { IoHomeOutline } from 'react-icons/io5';
-
 import productDetailsContext from '../../context/productDetailsContext';
-import CategoriesList from './CategoriesList'
-import  './headerPages.css'
+import CategoriesList from './CategoriesList';
+import './headerPages.css';
+
 
 function HeaderPages() {
   const {
@@ -18,7 +18,7 @@ function HeaderPages() {
     labelCLick
   } = useContext(headerContext)
 
-  const { getLocalStorage} = useContext(productDetailsContext)
+  const { getLocalStorage } = useContext(productDetailsContext)
 
   useEffect(() => {
     getLocalStorage()
@@ -30,18 +30,18 @@ function HeaderPages() {
 
   return (
     <header className='responsive-header'>
-      <h1>shoppingCart</h1>
+      <h1>ShoppingCart</h1>
       <div className='searchDiv'>
-      <nav className='link-home'>
-        <Link
-          to="/"
-          type="submit"
+        <nav className='link-home'>
+          <Link
+            to="/"
+            type="submit"
 
-        >
-          <IoHomeOutline />
-        </Link>
+          >
+            <IoHomeOutline />
+          </Link>
 
-      </nav>
+        </nav>
         <section className='searchSection'>
           <input
             value={searchInput}
@@ -52,28 +52,40 @@ function HeaderPages() {
           <BsSearch className='search-button' onClick={handleClick} />
         </section>
         <nav className='headers-links'>
-        <Link
-          to="/"
-        >
-          Home
-        </Link>
-     <CategoriesList labelCLick={labelCLick}/>
           <Link
-          to="/shopping-cart"
-          type="submit">
+            to="/"
+          >
+            Home
+          </Link>
+          <CategoriesList labelCLick={labelCLick} />
+          <Link
+            to="/shopping-cart"
+            type="submit">
 
-            </Link>  
+          </Link>
         </nav>
       </div>
       <nav className='cart'>
         <Link
           to="/shopping-cart"
           type="submit"
-
         >
           <RiShoppingCartLine />
         </Link>
-
+        <div>
+        <Link
+          to="/perfil"
+          type="submit"
+        >
+          Perfil
+        </Link>
+        <Link
+          to="/contact"
+          type="submit"
+        >
+          Contatos
+        </Link>
+        </div>
       </nav>
     </header >
   )

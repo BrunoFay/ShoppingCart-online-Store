@@ -1,10 +1,10 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import HeaderProvider from './context/HeaderProvider';
+import ProductProvider from './context/ProductProvider';
+import Checkout from './pages/Checkout';
 import Home from './pages/Home';
 import ShoppingCart from './pages/ShoppingCart';
-import Checkout from './pages/Checkout';
-import HeaderProvider from './context/HeaderProvider'
-import ProductProvider from './context/ProductProvider';
 
 export default function App() {
 

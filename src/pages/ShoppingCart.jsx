@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import ProductsInCart from '../components/products/ProductsInCart';
 import Footer from '../components/footer/Footer';
 import HeaderPages from '../components/header/HeaderPages';
-import { removeLocalStorage, addLocalStorage } from '../services/localStorage'
+import ProductsInCart from '../components/products/ProductsInCart';
 import productDetailsContext from '../context/productDetailsContext';
+import { addLocalStorage, removeLocalStorage } from '../services/localStorage';
 
 
 export default function ShoppingCart() {

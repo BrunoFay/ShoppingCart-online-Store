@@ -1,6 +1,6 @@
-import React from 'react'
-import ProductsCard from '../products/ProductsCard';
+import React from 'react';
 import AddCartButton from '../buttons/AddCartButton';
+import ProductsCard from '../products/ProductsCard';
 export default function HomecardContainer({searchResult}) {
   return (
     <>

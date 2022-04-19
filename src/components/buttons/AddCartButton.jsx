@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import productDetailsContext from '../../context/productDetailsContext';
 

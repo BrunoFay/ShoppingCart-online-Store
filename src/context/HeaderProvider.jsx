@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import headerContext from './headerContext';
-import { getProductsFromCategoryAndQuery } from '../services/api';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { getProductsFromCategoryAndQuery } from '../services/api';
+import headerContext from './headerContext';
 
 
 
