@@ -51,9 +51,6 @@ export default function Home() {
     <main className='home'>
 
       <HeaderPages />
-      <section className='search-input'>
-      </section>
-
       <section className='home-containers'>
         <ProductNotFoundMessage
           searchResult={searchResult}
