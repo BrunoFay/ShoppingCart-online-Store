@@ -6,12 +6,9 @@
   }
 
   .products-container {
-    justify-content: space-between;
     height: 20vh;
     width: 80vw;
-    transition: ease-out 200ms all;
-    transform: scale(0.9);
-    background-color: var(--cardBackground);
+
   }
 
   .products-container img {
@@ -20,7 +17,6 @@
 
   .products-container:nth-child(1) {
     margin-top: 0.5rem;
-
   }
 
   .home-containers .card-container {
@@ -29,12 +25,6 @@
     height: 20vh;
     width: 100vw;
     gap: 1em;
-  }
-
-  .home-containers .products-container:hover {
-    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.432);
-    transform: scale(1);
-
   }
 
   .home-containers .products-container button {
@@ -64,12 +54,6 @@
     overflow: auto;
   }
 
-  .home-containers .product-price {
-    height: max-content;
-    color: var(--collorPrice);
-    font-size: 1.5em;
-  }
-
   .freeShipping {
     font-size: 1rem;
   }
@@ -88,10 +72,6 @@
     padding: 2%;
   }
 
-  .freeShipping {
-    color: rgb(31, 168, 31);
-    text-shadow: 0 0 1px #000;
-  }
 }
 
 @media only screen and (min-width: 601px) {
@@ -100,54 +80,88 @@
     align-items: center;
     height: 100vh;
     border-radius: 7px;
+  }
 
-  }
-  .home-containers .products-container button{
+  .home-containers .products-container button {
+    position: relative;
+    bottom: 0.3rem;
     align-self: center;
-    font-size: 1rem;
-    width: 20%;
-    background-color: blue;
-  }
+    font-size: 1.3rem;
+    width: 3rem;
+    background-color:var(--titleAndFreeShipping);
+    color: #ffffff;
+    border: none;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 3px;
+    }
+
   .products-container {
     flex-direction: column;
     width: 13em;
     height: 17rem;
     border-radius: 2rem;
   }
+
   .image-card {
     width: 7em;
-    height: 8em;
+    height: 7em;
     padding-left: 0.3rem;
   }
+
   .title-product {
-    color: rgb(31, 1, 26);
+    color: #6e6b6b;
     font-size: 0.9rem;
     font-style: italic;
     height: 3rem;
     overflow: hidden;
     transition: ease-in-out 0.2s;
     width: 90%;
+    text-align: center;
   }
-  .card-infos  {
+
+  .card-infos {
     justify-content: space-around;
     align-items: center;
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
-  .card-infos div{
+
+  .card-infos div {
     justify-content: space-around;
     display: flex;
   }
+
+  .freeShipping {
+    position: relative;
+    bottom: 0.5rem;
+  }
+
+}
+
+.freeShipping {
+  color: var(--collorPrice);
+  text-shadow: 0 0 1px #000;
 }
 
 .home-containers .card-container {
   display: flex;
 }
-
 .products-container {
   display: flex;
   justify-content: space-between;
+  transform: scale(0.9);
   transition: ease-out 200ms all;
-  background-color: var(--cardBackground);
+  background-color: var(--cardBackgroundAndLinksHeaderColor);
+}
+.home-containers .product-price {
+  height: max-content;
+  color: var(--titleAndFreeShipping);
+  font-size: 1.5em;
+}
+.home-containers .products-container:hover {
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.432);
+  transform: scale(1);
+
 }

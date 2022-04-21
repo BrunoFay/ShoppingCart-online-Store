@@ -8,12 +8,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgba(0, 0, 0, .1);
-      --mainColor:#0e2e97e8;
+      --mainColor:#0d0d0d;
       --mainColorButton:#3c5fd4d5;
       --collorPrice:rgb(106, 99, 211);
       --redCollorRemovebtn:#e42604f5;
-      --cardBackground:#FFFFFF;
-      
+      --cardBackgroundAndLinksHeaderColor:#FFFFFF;
+      --titleAndFreeShipping:#d95032;
+      --BackColor:#e2dcdc;
 }
 
 textarea {

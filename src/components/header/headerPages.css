@@ -62,7 +62,7 @@
   }
 
   .link-home a, .cart a {
-    color: antiquewhite;
+    color: var(--cardBackgroundAndLinksHeaderColor);
     font-size: 1.5em;
 
   }
@@ -129,7 +129,7 @@
     border: none;
     transition: ease-in-out 0.5s;
     appearance: none;
-    color: aliceblue;
+    color: var(--cardBackgroundAndLinksHeaderColor);
     background-color: rgba(54, 30, 141, 0.26);
     font-size: 1rem;
     font-weight: bold;
@@ -155,6 +155,8 @@
    position: relative;
     top: 0.6rem;
     right: 1.5rem;
+    color: var(--titleAndFreeShipping);
+    
   }
 
   .cart>div {
@@ -169,7 +171,7 @@
     margin-left: 1rem;
   }
   a{
-    color: aliceblue;
+    color: var(--cardBackgroundAndLinksHeaderColor);
   }
 }
 
@@ -184,7 +186,8 @@
 }
 
 .search-button {
-  background-color: rgb(233, 202, 27);
+  background-color: var(--titleAndFreeShipping);
+  color: var(--cardBackgroundAndLinksHeaderColor);
   cursor: pointer;
   font-size: larger;
 }
@@ -195,8 +198,8 @@
 
 h1,h2 {
   font-weight: bold;
-  color: rgb(19, 207, 19);
-  text-shadow: 2px 2px 2px rgba(14, 13, 13, 0.582);
+  color: var(--titleAndFreeShipping);
+  text-shadow: 2px 2px 2px rgba(85, 83, 83, 0.664);
 }
 h2{
   text-align: center;

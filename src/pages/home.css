@@ -16,10 +16,10 @@
     padding: 1.5rem 3rem;
     align-self: center;
     justify-content: center;
-    background-color: black;
     height: 100vh;
     overflow: auto;
     justify-self: center;
+    background-color: var(--BackColor);
   }
 }
 .home-containers{
