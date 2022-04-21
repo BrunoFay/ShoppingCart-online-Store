@@ -130,13 +130,13 @@
     transition: ease-in-out 0.5s;
     appearance: none;
     color: var(--cardBackgroundAndLinksHeaderColor);
-    background-color: rgba(54, 30, 141, 0.26);
+    background-color: var(--mainColor);
     font-size: 1rem;
     font-weight: bold;
   }
 
   .headers-links select:active {
-    background-color: rgb(54, 30, 141);
+    background-color: var(--mainColor);
     width: max-content;
   }
 

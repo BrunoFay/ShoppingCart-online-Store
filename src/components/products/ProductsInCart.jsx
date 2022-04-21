@@ -61,8 +61,8 @@ export default function ProductsInCart({
   }, [])
 
   return (
-    <main className='products-incart'>
-      <div className='products-container' >
+    < >
+      <div className='products-container' id={product.id} >
         <ProductsCard
           product={product}
         />
@@ -87,9 +87,9 @@ export default function ProductsInCart({
 
       </div>
       </div>
-      <button type="button" onClick={removeItens} className='remove-cart-item'>x</button>
+      <button type="button" onClick={(e) => removeItens(e)} className='remove-cart-item'>x</button>
 
-    </main>
+    </>
   );
 
 }

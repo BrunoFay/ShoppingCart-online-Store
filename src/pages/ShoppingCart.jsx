@@ -13,8 +13,7 @@ export default function ShoppingCart() {
 
 
   const removeItens = ({ target }) => {
-    const itemName = target.parentElement.firstChild.firstChild.getAttribute('id')
-
+    const itemName = target.parentElement.firstChild.getAttribute('id')
     const cartFiltred = itensInCart.filter((i) => i.item.id !== itemName)
     removeItensFromLS(cartFiltred)
   }
@@ -54,21 +53,20 @@ export default function ShoppingCart() {
         <section className='scroll-itens'>
           {!itensInCart
             ? (
-            <h2 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h2>
+              <h2 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h2>
             )
             : itensInCart.map((item, index) => (
-              <div key={index}>
+              <div className='products-incart' key={index} >
                 <ProductsInCart
                   product={item.item}
                   countI={item.count}
-                  removeItens={(e) => removeItens(e)
-                  }
+                  removeItens={removeItens}
                 />
               </div>
             ))}
         </section>
       </main>
-      <Footer className='footer-shoppingCart'/>
+      <Footer className='footer-shoppingCart' />
     </>
   );
 
