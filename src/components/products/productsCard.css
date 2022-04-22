@@ -155,7 +155,7 @@
 }
 .home-containers .product-price {
   height: max-content;
-  color: var(--titleAndFreeShipping);
+  color: var(--mainOrangeColor);
   font-size: 1.5em;
 }
 .home-containers .products-container:hover {

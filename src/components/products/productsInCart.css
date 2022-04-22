@@ -61,7 +61,7 @@
   }
 
   .scroll-itens .buttons-quantity button:hover {
-    background-color: var(--mainColor);
+    background-color: var(--mainColorBlack);
   }
 
   .scroll-itens .title-product {
