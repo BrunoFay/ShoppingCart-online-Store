@@ -112,8 +112,7 @@
 
   .checkout-main section:first-child section:first-child {
     background-color: var(--cardBackground);
-    min-height: 9rem;
-    flex-direction: row;
+    height: 9rem;
   }
 }
 

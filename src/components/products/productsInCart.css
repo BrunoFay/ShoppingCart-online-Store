@@ -25,10 +25,9 @@
   }
 
   .scroll-itens .freeShipping {
-    position: absolute;
-    top: 0;
-    right: 14rem;
-    bottom: 1rem;
+    position: relative;
+    right: 46vw;
+    bottom: 10vh;
     transform: rotate(-45deg);
     font-size: small;
 
@@ -183,9 +182,9 @@
     overflow: auto;
     color: var(--colorGreyTitle);
     position: relative;
-    top: 1.2rem;
+    top: 0.5rem;
     font-size: 1rem;
-    height: 3.5rem;
+    height: 2.8rem;
   }
 
   .scroll-itens .buttons-quantity {
