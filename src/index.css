@@ -69,7 +69,15 @@ code {
   margin-left: 6em;
 }
 
-/* loading */
+@media only screen and (max-width: 600px) {
+  .logo-loading {
+    position: relative;
+    right: 5rem;
+    height: 8rem;
+    margin: 10em 20em 0 30em;
+    animation: rotation-y infinite 1s alternate;
+  }
+}
 .logo-loading {
   height: 12rem;
   margin: 10em 20em 0 30em;
