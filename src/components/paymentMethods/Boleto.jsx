@@ -23,7 +23,6 @@ export default function Boleto({
          className="cheackoutName"
           type="text"
           name="nome"
-          data-testid="checkout-fullname"
           onChange={handleChange}
           value={nome}
           placeholder='Nome Completo'
@@ -34,7 +33,6 @@ export default function Boleto({
          className="cheackoutEmail"
           type="email"
           name="email"
-          data-testid="checkout-email"
           onChange={handleChange}
           value={email}
           placeholder='Email'
@@ -46,7 +44,6 @@ export default function Boleto({
          className="cheackoutCPF"
           type="text"
           name="cpf"
-          data-testid="checkout-cpf"
           onChange={handleChange}
           value={cpf}
           placeholder='CPF'
@@ -58,7 +55,6 @@ export default function Boleto({
          className="cheackoutTelefone"
           type="tel"
           name="telefone"
-          data-testid="checkout-phone"
           onChange={handleChange}
           value={telefone}
           placeholder='Telefone para Contato'
@@ -69,7 +65,6 @@ export default function Boleto({
          className="cheackoutCEP"
           type="text"
           name="cep"
-          data-testid="checkout-cep"
           onChange={handleChange}
           value={cep}
           placeholder='CEP'
@@ -81,7 +76,6 @@ export default function Boleto({
          className="cheackoutEndereço"
           type="text"
           name="endereco"
-          data-testid="checkout-address"
           onChange={handleChange}
           value={endereco}
           placeholder='Endereço'
@@ -100,9 +94,9 @@ export default function Boleto({
         <div className='boleto-middle-1'>
           <span>N de itens:{quantidadeItens}</span>
         <div className='boleto-valores'>
-          <span>(10%) valor minimo:{(totalValue * 0.10).toFixed(2)} R$ </span>
+          <span>(10%) valor minimo:{((totalValue||0) * 0.10).toFixed(2)} R$ </span>
           <span>(0) Descontos: 0</span>
-          <span>(100%) valor total:{totalValue} R$</span>
+          <span>(100%) valor total: {totalValue ||0} R$</span>
         </div>
         </div>
         <div className='boleto-middle-2'>

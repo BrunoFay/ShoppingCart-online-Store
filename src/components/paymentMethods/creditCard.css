@@ -1,12 +1,114 @@
 @media only screen and (max-width: 600px) {
+  .card-credit {
+    height: 28vh;
+    width: 80vw;
+  }
+  .card-top {
+    display: flex;
+    justify-content: right;
+    height: 2.3rem;
+  }
+
+  .card-top img {
+    margin: 0.5rem 0.3rem 0;
+  }
+
+  .card-middle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+  }
+
+  .card-number {
+    width: 11rem;
+    margin-left: 1rem;
+  }
+
+  .card-bottom {
+    display: flex;
+    height: 7.4vh;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .card-bottom img {
+    height: 4rem;
+    margin-left: 0.6rem;
+  }
+
+  .card-middle img {
+    height: 2rem;
+    background-color: rgb(169, 172, 172);
+    margin-left: 0.4rem;
+  }
+
+  .info1, .info2 {
+    width: 1px;
+  }
+}
+
+@media only screen and (min-width: 610px) {
+  .card-credit {
+    height: 33vh;
+    width: 30vw;
+  }
+ 
+
+  .card-top {
+    display: flex;
+    justify-content: right;
+    height: 2.3rem;
+
+  }
+
+  .card-top img {
+    margin: 0.5rem 0.3rem 0;
+  }
+
+  .card-middle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+  }
+
+  .card-number {
+    width: 11rem;
+    margin-left: 1rem;
+  }
+
+  .card-bottom {
+    display: flex;
+    height: 7.4vh;
+    gap: 1rem;
+    align-items: center;
+
+  }
+
+  .card-bottom img {
+    height: 4rem;
+    position: relative;
+    top:3.5vh;
+    left: 0.7vw;
+  }
+
+  .card-middle img {
+    height: 2rem;
+    background-color: rgb(169, 172, 172);
+    margin-left: 0.4rem;
+  }
+
+  .info1, .info2 {
+    width: 1px;
+  }
+}
 .card-credit {
-  height: 28vh;
-  width: 80vw;
   background: linear-gradient(to right, #0c0c0c, #500c91);
   border-radius: 7px;
   align-items: center;
-  justify-content:space-between;
-  margin:  1rem 0;
+  justify-content: space-between;
+  margin: 1rem 0;
   color: #ffffff;
 }
 .card-credit .card-infos {
@@ -18,45 +120,4 @@
   font-size: 0.8rem;
   font-weight: bold;
   padding-right: 1rem;
-}
-
-.card-top {
-  display: flex;
-  justify-content: right;
-  height: 2.3rem;
-
-}
-.card-top img {
-  margin: 0.5rem  0.3rem  0;
-}
-.card-middle {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 15vh;
-}
-.card-number{
-  width: 11rem;
-  margin-left: 1rem;
-}
-.card-bottom {
-  display: flex;
-  height: 7.4vh;
-  gap: 1rem;
-  align-items: center;
-
-}
-.card-bottom img {
-  height: 4rem;
-  margin-left: 0.6rem;
-}
-.card-middle img {
-  height: 2rem;
-  background-color: rgb(169, 172, 172);
-  margin-left: 0.4rem;
-}
-
-.info1, .info2 {
-  width: 1px;
-}
 }

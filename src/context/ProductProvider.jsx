@@ -31,13 +31,14 @@ export default function ProductProvider({ children }) {
     addLocalStorage('shoppingCart', arrayCartItens);
   }
 
+ 
   const contextValues = {
-     productStates,
-     setProductStates,
-     getLocalStorage,
-     addCartItensToLocalStorage,
-     };
-  
+    productStates,
+    setProductStates,
+    getLocalStorage,
+    addCartItensToLocalStorage,
+  };
+
   return (
     <productDetailsContext.Provider value={contextValues}>
       {children}

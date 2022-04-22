@@ -16,7 +16,7 @@ export default function Home() {
   } = useContext(headerContext)
 
   const { searchInput, loading, searchResult, buttonClicked } = headerStates
-  const { getLocalStorage, productStates: { itensInCart } } = useContext(productDetailsContext)
+  const { getLocalStorage } = useContext(productDetailsContext)
 
 
   useEffect(() => {
@@ -28,10 +28,15 @@ export default function Home() {
   }, [searchInput])
 
   useEffect(async () => {
+    setHeaderStates(prevState => ({
+      ...prevState,
+      loading: true,
+    }))
     await getProductsFromCategoryAndQuery('MLB1648', '')
       .then((data) => setHeaderStates(prevState => ({
         ...prevState,
         searchResult: data.results,
+        loading: false,
       })))
   }, [])
 

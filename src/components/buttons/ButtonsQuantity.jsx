@@ -5,7 +5,6 @@ export default function ButtonsQuantity({ countProducts, value,buttonDisable = f
     <button
       className='quantity'
       value={value}
-      data-testid="product-decrease-quantity"
       type="button"
       onClick={() => countProducts(value)}
       disabled={buttonDisable}

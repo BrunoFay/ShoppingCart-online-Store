@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgba(0, 0, 0, .1);
+  background-color: var(--BackColor);
       --mainColor:#0d0d0d;
       --mainColorButton:#3c5fd4d5;
       --collorPrice:rgb(106, 99, 211);
@@ -15,6 +15,7 @@ body {
       --cardBackgroundAndLinksHeaderColor:#FFFFFF;
       --titleAndFreeShipping:#d95032;
       --BackColor:#e2dcdc;
+      --colorGreyTitle:#6e6b6b;
 }
 
 textarea {
@@ -70,18 +71,19 @@ code {
 
 /* loading */
 .logo-loading {
+  height: 12rem;
   margin: 10em 20em 0 30em;
   animation: rotation-y infinite 1s alternate;
 }
 
 @keyframes rotation-y {
   from {
-    transform: rotate(0deg);
+    transform: rotateY(0deg);
 
   }
 
   to {
-    transform: rotate(360deg);
+    transform: rotateY(360deg);
   }
 }
 

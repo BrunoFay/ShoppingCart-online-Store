@@ -24,7 +24,6 @@ function AddCartButton({ product }) {
     <>
       <button
         type="button"
-        data-testid="product-add-to-cart"
         onClick={handleClick}
       >
         <RiShoppingCartLine className='cart-logo' />

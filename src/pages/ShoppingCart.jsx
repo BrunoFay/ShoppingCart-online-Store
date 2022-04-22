@@ -30,7 +30,6 @@ export default function ShoppingCart() {
     removeLocalStorage('shoppingCart')
     setProductStates((prevState) => ({ ...prevState, itensInCart: [] }))
   };
-
   return (
     <>
       <HeaderPages />
@@ -44,17 +43,15 @@ export default function ShoppingCart() {
         <Link
           to="/checkout"
           type="submit"
-          data-testid="checkout-products"
         >
           Finalizar compra
         </Link>
       </div>
       <main className='shoppingCart' value={''}>
         <section className='scroll-itens'>
-          {!itensInCart
-            ? (
-              <h2 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h2>
-            )
+          {!itensInCart || !itensInCart.length
+            ?
+            <h2>Seu carrinho está vazio</h2>
             : itensInCart.map((item, index) => (
               <div className='products-incart' key={index} >
                 <ProductsInCart

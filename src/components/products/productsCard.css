@@ -40,8 +40,6 @@
   .home-containers .products-container button:hover {
     background-color: var(--mainColor);
   }
-
-
   .title-product {
     color: rgb(31, 1, 26);
     font-size: 1rem;
@@ -89,7 +87,7 @@
     font-size: 1.3rem;
     width: 3rem;
     background-color:var(--titleAndFreeShipping);
-    color: #ffffff;
+    color: var(--cardBackgroundAndLinksHeaderColor);
     border: none;
     height: 2rem;
     cursor: pointer;
@@ -100,19 +98,18 @@
     flex-direction: column;
     width: 13em;
     height: 17rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
   }
 
   .image-card {
     width: 7em;
     height: 7em;
-    padding-left: 0.3rem;
+    padding: 0.3rem;
+    padding-bottom: 0;
   }
 
   .title-product {
-    color: #6e6b6b;
     font-size: 0.9rem;
-    font-style: italic;
     height: 3rem;
     overflow: hidden;
     transition: ease-in-out 0.2s;
@@ -148,12 +145,13 @@
 .home-containers .card-container {
   display: flex;
 }
-.products-container {
+.home-containers .products-container {
   display: flex;
   justify-content: space-between;
   transform: scale(0.9);
   transition: ease-out 200ms all;
   background-color: var(--cardBackgroundAndLinksHeaderColor);
+  border-radius: 7px;
 }
 .home-containers .product-price {
   height: max-content;
@@ -164,4 +162,8 @@
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.432);
   transform: scale(1);
 
+}
+.title-product {
+  color: var(--colorGreyTitle);
+  font-style: italic;
 }

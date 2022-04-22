@@ -13,17 +13,14 @@ const INITIAL_STATE = {
 export default function ProductsInCart({
   product,
   countI,
-  removeItens
+  removeItens,
 }) {
   const [productsInCart, setProductsInCart] = useState(INITIAL_STATE)
   const { countItens, buttonDisable } = productsInCart;
   const { price, available_quantity: quantity } = product
   const { addCartItensToLocalStorage } = useContext(productDetailsContext)
 
-
-  // referencia https://stackoverflow.com/questions/55495198/reacts-setstate-method-with-prevstate-argument/55496277
   const countProducts = (value) => {
-
     if (value === '+') {
       setProductsInCart(((prevState) => ({
         ...prevState,
@@ -36,8 +33,7 @@ export default function ProductsInCart({
         ...prevState,
         countItens: prevState.countItens - 1,
       }));
-
-
+      
     }
   }
 
@@ -66,26 +62,26 @@ export default function ProductsInCart({
         <ProductsCard
           product={product}
         />
-      <div className='buttons-quantity'>
-        <div>
-          <ButtonsQuantity
-            countProducts={countProducts}
-            value="-" />
-          <span
-            data-testid="shopping-cart-product-quantity"
-          >
-            <span className='price-item'>  R$ {(countItens * price).toFixed(2)}
-            </span>
+        <div className='buttons-quantity'>
+          <div>
+            <ButtonsQuantity
+              countProducts={countProducts}
+              value="-" />
+            <span
+              data-testid="shopping-cart-product-quantity"
+            >
+              <span className='price-item'>  R$ {(countItens * price).toFixed(2)}
+              </span>
 
-          </span>
-          <ButtonsQuantity
-            countProducts={countProducts}
-            value="+"
-            buttonDisable={buttonDisable} />
+            </span>
+            <ButtonsQuantity
+              countProducts={countProducts}
+              value="+"
+              buttonDisable={buttonDisable} />
+
+          </div>
 
         </div>
-
-      </div>
       </div>
       <button type="button" onClick={(e) => removeItens(e)} className='remove-cart-item'>x</button>
 

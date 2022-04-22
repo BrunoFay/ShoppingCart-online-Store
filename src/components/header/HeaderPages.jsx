@@ -72,15 +72,15 @@ function HeaderPages() {
         >
           <RiShoppingCartLine />
         </Link>
-        <div>
+        <div className='profileAndContact-container'>
         <Link
-          to="/perfil"
+          to="/profile"
           type="submit"
         >
           Perfil
         </Link>
         <Link
-          to="/contact"
+          to="/contacts"
           type="submit"
         >
           Contatos

@@ -14,7 +14,6 @@
     margin-bottom: 1rem;
   }
 
-  /* div de buttons */
   .checkout-button {
     gap: 1em;
     justify-content: center;
@@ -40,7 +39,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 80vh;
+    height: 90vh;
   }
 
   .shoppingCart .card-container {
@@ -57,7 +56,6 @@
   .scroll-itens .buttons-quantity button {
     border-radius: 7px;
     border: unset;
-    padding: 5px 10px;
     font-size: 1.3rem;
     background-color: var(--mainColorButton);
     color: #ffffff;
@@ -76,7 +74,7 @@
 
   .scroll-itens .product-price {
     color: var(--collorPrice);
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .scroll-itens .card-infos {
@@ -97,17 +95,15 @@
 
   .scroll-itens .price-item {
     padding: 0 0.3rem;
-    font-size: 1.4rem;
-    color: var(--collorPrice);
+    font-size: 1.1rem;
+    color: var(--titleAndFreeShipping);
   }
+
   .shoppingCart .scroll-itens {
     margin-top: 0.3rem;
     gap: 1rem;
     max-height: 90vh;
-
   }
-
- 
 
   .scroll-itens a {
     color: #308b06;
@@ -117,25 +113,32 @@
   }
 
   .remove-cart-item {
+    position: relative;
+    top: 0.2rem;
     padding-left: 0.5rem;
-    height: 100%;
+    height: 94%;
     width: 1.5rem;
     font-size: 1rem;
     border-radius: 0 7px 7px 0px;
   }
 
-
+  .products-incart .products-container {
+    height: 8rem;
+    border-radius: 7px 0 0 7px;
+  }
 }
 
 @media only screen and (min-width: 610px) {
   .shoppingCart .scroll-itens {
     height: 100vh;
+    gap: 1rem;
+
   }
 
   .shoppingCart .scroll-itens .card-container {
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 80%;
     gap: 1rem;
   }
 
@@ -145,9 +148,9 @@
   }
 
   .scroll-itens img {
-    width: 10rem;
+    width: 8rem;
     object-fit: none;
-    transform: scale(1.5);
+    transform: scale(1.2);
 
   }
 
@@ -159,8 +162,12 @@
   }
 
   .products-incart .products-container {
-    width: 34em;
-    height: 14rem;
+    width: 28em;
+    height: 12rem;
+  }
+
+  .scroll-itens:last-child {
+    margin-bottom: 1rem;
   }
 
   .scroll-itens .product-price {
@@ -168,23 +175,24 @@
   }
 
   .scroll-itens .freeShipping {
-    position: absolute;
-    bottom: 1rem;
-    font-size: x-large;
+    position: relative;
+    top: 1rem;
   }
 
   .scroll-itens .title-product {
+    overflow: auto;
+    color: var(--colorGreyTitle);
     position: relative;
-    bottom: 0.3rem;
-    font-size: 1.2rem;
-    height: 4.5rem;
+    top: 1.2rem;
+    font-size: 1rem;
+    height: 3.5rem;
   }
 
   .scroll-itens .buttons-quantity {
     display: flex;
     justify-self: center;
     color: var(--titleAndFreeShipping);
-    font-size: 2em;
+    font-size: 1.5em;
     bottom: 4rem;
     left: 4.5rem;
   }
@@ -194,8 +202,8 @@
   }
 
   .remove-cart-item {
-    bottom: 5.3rem;
-    right: 3.6rem;
+    bottom: 4.9rem;
+    right: 1.8rem;
     border-radius: 50%;
     font-size: 1.1rem;
   }
@@ -210,12 +218,7 @@
   align-items: center;
 }
 
-.products-incart .products-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
-}
 
 .scroll-itens .buttons-quantity {
   position: relative;
@@ -239,14 +242,16 @@
 
 .remove-cart-item {
   position: relative;
-  border: none; 
+  border: none;
   background-color: var(--redCollorRemovebtn);
   color: #ececeb;
   transition: all 200ms ease-in-out;
 }
+
 .remove-cart-item:hover {
   opacity: 1;
 }
+
 .checkout-button>button, .checkout-button a {
   background-color: var(--redCollorRemovebtn);
   border: none;
@@ -261,6 +266,7 @@
 .checkout-button>a {
   background-color: #03344bef;
 }
+
 .checkout-button {
   display: flex;
   border: black 2px solid;
@@ -272,9 +278,22 @@
   text-align: center;
   overflow-x: hidden;
 }
+
 .scroll-itens::-webkit-scrollbar, .scroll-itens .title-product::-webkit-scrollbar {
   display: none;
 }
+
 .scroll-itens button {
   cursor: pointer;
+}
+
+.products-incart .products-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--cardBackgroundAndLinksHeaderColor);
+}
+
+.scroll-itens .title-product {
+  color: var(--colorGreyTitle);
 }
