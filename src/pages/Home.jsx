@@ -36,7 +36,7 @@ export default function Home() {
       .then((data) => setHeaderStates(prevState => ({
         ...prevState,
         searchResult: data.results,
-       /*  loading: false, */
+         loading: false, 
       })))
   }, [])
 
