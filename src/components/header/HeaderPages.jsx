@@ -24,10 +24,6 @@ function HeaderPages() {
     getLocalStorage()
   }, [])
 
-
-
-
-
   return (
     <header className='responsive-header'>
       <h1>ShoppingCart</h1>
@@ -36,11 +32,9 @@ function HeaderPages() {
           <Link
             to="/"
             type="submit"
-
           >
             <IoHomeOutline />
           </Link>
-
         </nav>
         <section className='searchSection'>
           <input

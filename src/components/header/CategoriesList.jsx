@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React, { useCallback, useContext, useEffect } from 'react';
 import headerContext from '../../context/headerContext';
 import { getCategories } from '../../services/api';
+import {CATEGORIES_NAMES_TO_REMOVE} from '../../services/constants';
 
-const CATEGORIES_NAMES_TO_REMOVE = ['Imóveis', 'Ingressos', 'Serviços', 'Festas e Lembrancinhas', 'Câmeras e Acessórios', 'Carros, Motos e Outros', 'Brinquedos e Hobbies', 'Antiguidades e Coleções', 'Música, Filmes e Seriados', 'Agro', 'Arte, Papelaria e Armarinho', 'Indústria e Comércio', 'Bebês', 'Ferramentas', 'Construção']
 
 export default function CategoriesList({ labelCLick }) {
   const { headerStates: { categories }, setHeaderStates } = useContext(headerContext);

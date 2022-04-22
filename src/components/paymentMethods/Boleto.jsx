@@ -1,7 +1,6 @@
 import React from 'react'
 import './boleto.css'
 
-
 export default function Boleto({
   nome,
   email,
@@ -14,7 +13,6 @@ export default function Boleto({
   quantidadeItens,
   codeBoleto
 }) {
-
   return (
     <>
       <form>
@@ -27,8 +25,6 @@ export default function Boleto({
           value={nome}
           placeholder='Nome Completo'
         />
-
-
         <input
          className="cheackoutEmail"
           type="email"
@@ -36,10 +32,7 @@ export default function Boleto({
           onChange={handleChange}
           value={email}
           placeholder='Email'
-
         />
-
-
         <input
          className="cheackoutCPF"
           type="text"
@@ -49,8 +42,6 @@ export default function Boleto({
           placeholder='CPF'
 
         />
-
-
         <input
          className="cheackoutTelefone"
           type="tel"
@@ -59,8 +50,6 @@ export default function Boleto({
           value={telefone}
           placeholder='Telefone para Contato'
         />
-
-
         <input
          className="cheackoutCEP"
           type="text"
@@ -70,8 +59,6 @@ export default function Boleto({
           placeholder='CEP'
 
         />
-
-
         <input
          className="cheackoutEndereço"
           type="text"
@@ -79,9 +66,7 @@ export default function Boleto({
           onChange={handleChange}
           value={endereco}
           placeholder='Endereço'
-
         />
-
         <button onClick={(e) => e.preventDefault()} className='buy-button' type='submit'>Finalizar</button>
       </form>
       <div className='boleto'>
@@ -115,5 +100,4 @@ export default function Boleto({
       </div>
     </>
   )
-
 }

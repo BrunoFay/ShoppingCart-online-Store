@@ -8,15 +8,16 @@ import { addLocalStorage, removeLocalStorage } from '../services/localStorage';
 
 
 export default function ShoppingCart() {
+
   const { productStates, setProductStates } = useContext(productDetailsContext)
   const { itensInCart } = productStates
-
 
   const removeItens = ({ target }) => {
     const itemName = target.parentElement.firstChild.getAttribute('id')
     const cartFiltred = itensInCart.filter((i) => i.item.id !== itemName)
     removeItensFromLS(cartFiltred)
   }
+
   const removeItensFromLS = (itens) => {
     const cartLocalStoge = itens.map((i) => i.item)
     setProductStates((prevState) => ({
@@ -24,12 +25,13 @@ export default function ShoppingCart() {
       itensInCart: itens
     }))
     addLocalStorage('shoppingCart', cartLocalStoge);
-
   }
+
   const removeCartLocalstorage = () => {
     removeLocalStorage('shoppingCart')
     setProductStates((prevState) => ({ ...prevState, itensInCart: [] }))
   };
+
   return (
     <>
       <HeaderPages />
@@ -66,5 +68,4 @@ export default function ShoppingCart() {
       <Footer className='footer-shoppingCart' />
     </>
   );
-
 }

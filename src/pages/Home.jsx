@@ -3,21 +3,20 @@ import Footer from '../components/footer/Footer';
 import HeaderPages from '../components/header/HeaderPages';
 import HomecardContainer from '../components/homeCardContainer/HomecardContainer';
 import Loading from '../components/loading/Loading';
-import ProductNotFoundMessage from '../components/productNotFoundMessage/ProductNotFoundMessage';
+import ProductNotFoundMessage from '../components/products/ProductNotFoundMessage';
 import headerContext from '../context/headerContext';
 import productDetailsContext from '../context/productDetailsContext';
 import './home.css';
 
 export default function Home() {
+
   const {
     setHeaderStates,
     headerStates,
     getProductsFromCategoryAndQuery,
   } = useContext(headerContext)
-
   const { searchInput, loading, searchResult, buttonClicked } = headerStates
   const { getLocalStorage } = useContext(productDetailsContext)
-
 
   useEffect(() => {
     getLocalStorage()
@@ -40,9 +39,6 @@ export default function Home() {
       })))
   }, [])
 
-
-
-
   const checkButtonState = () => {
     if (headerStates.searchInput === '') {
       setHeaderStates(prevState => ({
@@ -54,7 +50,6 @@ export default function Home() {
 
   return (
     <main className='home'>
-
       <HeaderPages />
       <section className='home-containers'>
         <ProductNotFoundMessage
@@ -63,7 +58,6 @@ export default function Home() {
         {loading ? <Loading /> : <HomecardContainer searchResult={searchResult} />}
       </section>
       <Footer />
-
     </main>
   );
 }

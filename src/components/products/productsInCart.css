@@ -72,7 +72,7 @@
   }
 
   .scroll-itens .product-price {
-    color: var(--collorPrice);
+    color: var(--mainColorPurple);
     font-size: 1em;
   }
 
@@ -95,7 +95,7 @@
   .scroll-itens .price-item {
     padding: 0 0.3rem;
     font-size: 1.1rem;
-    color: var(--titleAndFreeShipping);
+    color: var(--mainOrangeColor);
   }
 
   .shoppingCart .scroll-itens {
@@ -190,7 +190,7 @@
   .scroll-itens .buttons-quantity {
     display: flex;
     justify-self: center;
-    color: var(--titleAndFreeShipping);
+    color: var(--mainOrangeColor);
     font-size: 1.5em;
     bottom: 4rem;
     left: 4.5rem;
@@ -229,9 +229,9 @@
   opacity: 0.8;
   padding: 5px 10px;
   font-size: 1.3rem;
-  background-color: var(--titleAndFreeShipping);
+  background-color: var(--mainOrangeColor);
   transition: all 200ms ease-in-out;
-  color: var(--mainColor);
+  color: var(--mainColorBlack);
 }
 
 .scroll-itens .buttons-quantity button:hover {

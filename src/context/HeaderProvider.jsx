@@ -1,22 +1,11 @@
-
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import headerContext from './headerContext';
-
-
-
-const INITIAL_STATE = {
-  searchInput: '',
-  searchResult: [],
-  buttonClicked: false,
-  loading: false,
-  itensInCart: [],
-  categories: [],
-}
+import {INITIAL_STATE_HEADERSTATES_PROVIDER}from '../services/constants';
 
 function HeaderProvider({ children }) {
-  const [headerStates, setHeaderStates] = useState(INITIAL_STATE)
+  const [headerStates, setHeaderStates] = useState(INITIAL_STATE_HEADERSTATES_PROVIDER)
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -29,15 +18,16 @@ function HeaderProvider({ children }) {
   const handleClick = async () => {
    await checkLocation()
     setHeaderStates(prevState => ({ ...prevState, loading: true }))
-    
     await getProductsFromCategoryAndQuery('', headerStates.searchInput)
       .then((data) => setHeaderStates(prevState => ({
         ...prevState,
         searchResult: data.results,
         buttonClicked: true,
         loading: false
-      })));
+      })
+      ));
   }
+
   const handleKeyDown = (event) => {
     if (event.charCode === 13 || event.keyCode === 13) handleClick()
   }
@@ -47,7 +37,6 @@ function HeaderProvider({ children }) {
       ...prevState,
       [name]: target.value,
     }));
-
   }
   
   const labelCLick = async ({ target }) => {
@@ -59,16 +48,11 @@ function HeaderProvider({ children }) {
       searchResult: responseCategoryApi.results,
       loading: false
     }))
-  
   }
 
   const clearListResult = () => {
     setHeaderStates(prevState => ({ ...prevState, searchResult: [] }));
   }
-
-
-/* setar uma vez o estado vindo do locastorage no hedear e usar o useeffect para atualizar a acada nova adição de itens no carrinho */ 
-
 
   const contextValue = {
     headerStates,

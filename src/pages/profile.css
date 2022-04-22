@@ -38,7 +38,7 @@
 }
 
 .main-profile button {
-  background-color: var(--mainColor);
+  background-color: var(--mainColorBlack);
   border: none;
   border-radius: 5px;
   padding: 0.5rem 0.8rem;

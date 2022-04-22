@@ -6,13 +6,12 @@ export const loadLocalStorage = (key) => JSON.parse(localStorage.getItem(key));
 
 export const removeLocalStorage = (key) => localStorage.removeItem(key)
 
-
 const removeDuplicatesIntoArray = (arr) => {
   const arrIds = arr.map((element) => element.id);
   const uniqueIds = [...new Set(arrIds)]
-
   return makeObjectiItemWhithCount(uniqueIds,arr)
 }
+
 const makeObjectiItemWhithCount = (uniqueArr,LocalStorageArr) => {
   const result = uniqueArr
     .map(item => ({

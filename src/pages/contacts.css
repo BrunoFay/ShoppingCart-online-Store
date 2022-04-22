@@ -29,12 +29,12 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: var(--mainColor);
+  color: var(--mainColorBlack);
   transition: all 0.2s ease-in-out;
 }
 
 .main-authors a:hover {
-  color: var(--titleAndFreeShipping);
+  color: var(--mainOrangeColor);
 }
 
 .main-authors section {
@@ -50,7 +50,7 @@
   gap: 1rem;
 }
 .main-authors h2 {
-  color: var(--collorPrice);
+  color: var(--mainColorPurple);
 }
 .main-authors nav img {
   height: 10rem;

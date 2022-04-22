@@ -6,23 +6,10 @@ import Boleto from '../components/paymentMethods/Boleto';
 import CreditCard from '../components/paymentMethods/CreditCard';
 import productDetailsContext from '../context/productDetailsContext';
 import '../pages/checkout.css';
+import { INITIAL_STATE_CHECKOUT, RANDOM_NUMER_BOLETO } from '../services/constants';
 
-const SERIAL_NUMBER_BOLETO = 9 ** 16
-const RANDOM_NUMER = Math.floor(Math.random() * SERIAL_NUMBER_BOLETO) + SERIAL_NUMBER_BOLETO
-const INITIAL_STATE = {
-  nome: '',
-  email: '',
-  cpf: '',
-  telefone: '',
-  cep: '',
-  endereco: '',
-  select: '',
-  validade: '',
-  cardNumber: '',
-  cvv: ''
-}
 export default function Checkout() {
-  const [checkoutInfos, setCheckoutInfos] = useState(INITIAL_STATE)
+  const [checkoutInfos, setCheckoutInfos] = useState(INITIAL_STATE_CHECKOUT)
   const [codeBoleto, setCodeBoleto] = useState({ codeBoleto: '' })
   const { productStates: { itensInCart } } = useContext(productDetailsContext)
   const {
@@ -43,17 +30,15 @@ export default function Checkout() {
     generateBoletoCod()
   }, [])
 
-  const generateBoletoCod = () => setCodeBoleto({ codeBoleto: RANDOM_NUMER })
+  const generateBoletoCod = () => setCodeBoleto({ codeBoleto: RANDOM_NUMER_BOLETO })
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
-    
     setCheckoutInfos((prevState) => ({
       ...prevState,
       [name]: value,
     }))
   }
-
 
   const totalValue = itensInCart && itensInCart
     .map((e) => e.item.price * e.count)
@@ -123,7 +108,6 @@ export default function Checkout() {
       <Footer />
     </>
   );
-
 }
 
 Checkout.propTypes = {

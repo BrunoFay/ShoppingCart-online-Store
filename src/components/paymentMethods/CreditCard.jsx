@@ -11,7 +11,6 @@ export default function CreditCard({
   cvv
 }) {
 
-
   return (
     <>
       <form>
@@ -91,8 +90,6 @@ export default function CreditCard({
           <img src='https://logospng.org/download/nubank/logo-nu-nubank-roxo-icon-256.png' alt='chipimage' />
           <span>{nome.toUpperCase()}</span>
         </div>
-      
-
       </div>
     </>
   )

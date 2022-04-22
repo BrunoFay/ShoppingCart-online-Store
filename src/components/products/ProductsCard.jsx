@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import './productsCard.css';
-export default function ProductsCard({ product }) {
 
-  /* chance the name for products card colocar o state do details no contex*/
+export default function ProductsCard({ product }) {
 
   const {
     shipping: { free_shipping: freeShipping },
@@ -36,7 +35,6 @@ export default function ProductsCard({ product }) {
       </div>
     </div>
   );
-
 }
 ProductsCard.propTypes = {
   title: PropTypes.string,

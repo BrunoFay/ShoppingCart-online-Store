@@ -75,7 +75,7 @@
   }
 
   .checkout-itens p {
-    color: var(--collorPrice);
+    color: var(--mainColorPurple);
     font-size: 1.5rem;
   }
 
@@ -170,7 +170,7 @@
 }
 
 .paymentsMethods-section h1 {
-  color: var(--collorPrice);
+  color: var(--mainColorPurple);
   text-shadow: 1px 1px 1px rgba(109, 107, 107, 0.63);
 
 }
@@ -192,12 +192,12 @@
 }
 
 .checkout-itens p {
-  color: var(--titleAndFreeShipping);
+  color: var(--mainOrangeColor);
   font-size: clamp(1rem, 1.8vw, 2vw);
 }
 
 .total-price span {
-  color: var(--mainColor);
+  color: var(--mainColorBlack);
   font-size: clamp(1.3rem, 2vw, 2.5vw);
 }
 
@@ -246,7 +246,7 @@
   gap: 1.5rem;
   border-radius: 3px;
   padding: 1rem;
-  background-color: var(--collorPrice);
+  background-color: var(--mainColorPurple);
   align-self: center;
   transition: all 0.2s ease-in-out;
   box-shadow: 1px 1px 20px gray;
@@ -254,7 +254,7 @@
 }
 
 .checkout-main form:hover {
-  box-shadow: 1px 1px 20px var(--titleAndFreeShipping);
+  box-shadow: 1px 1px 20px var(--mainOrangeColor);
 }
 
 .checkout-main form input {
@@ -274,7 +274,7 @@
 .checkout-main form button {
   width: min-content;
   align-self: center;
-  background-color: var(--mainColor);
+  background-color: var(--mainColorBlack);
   border: none;
   padding: 0.5rem;
   color: #fff;
@@ -291,6 +291,6 @@
   flex: 20%;
   height: fit-content;
   flex-wrap: nowrap;
-  color: var(--titleAndFreeShipping);
+  color: var(--mainOrangeColor);
   text-shadow: 1px 1px 1px rgb(104, 100, 100);
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import AddCartButton from '../buttons/AddCartButton';
 import ProductsCard from '../products/ProductsCard';
+
 export default function HomecardContainer({searchResult}) {
   return (
     <>
@@ -17,6 +18,5 @@ export default function HomecardContainer({searchResult}) {
       ))
       }
     </>
-
   )
 }

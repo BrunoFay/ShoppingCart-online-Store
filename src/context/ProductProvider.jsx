@@ -1,17 +1,10 @@
 import React, { useCallback, useState } from 'react'
-import {
-  addLocalStorage, loadCartArrayLocalStorage, loadLocalStorage
-} from '../services/localStorage'
+import { addLocalStorage, loadCartArrayLocalStorage, loadLocalStorage } from '../services/localStorage'
 import productDetailsContext from './productDetailsContext'
-
-const INITIAL_STATE = {
-  itensInCart: [],
-  categories: [],
-  productDetail: {},
-}
+import {INITIAL_STATE_PRODUCTSTATES_PROVIDER} from '../services/constants'
 
 export default function ProductProvider({ children }) {
-  const [productStates, setProductStates] = useState(INITIAL_STATE)
+  const [productStates, setProductStates] = useState(INITIAL_STATE_PRODUCTSTATES_PROVIDER)
 
   const getLocalStorage = useCallback(() => {
     setProductStates((prevState) => ({
@@ -19,7 +12,6 @@ export default function ProductProvider({ children }) {
       itensInCart: loadCartArrayLocalStorage('shoppingCart')
     }))
   }, [productStates.itensInCart])
-
 
   const addCartItensToLocalStorage = (item) => {
     let arrayCartItens = [];
@@ -31,7 +23,6 @@ export default function ProductProvider({ children }) {
     addLocalStorage('shoppingCart', arrayCartItens);
   }
 
- 
   const contextValues = {
     productStates,
     setProductStates,

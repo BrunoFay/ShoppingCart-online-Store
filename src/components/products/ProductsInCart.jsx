@@ -4,18 +4,10 @@ import productDetailsContext from '../../context/productDetailsContext';
 import ButtonsQuantity from '../buttons/ButtonsQuantity';
 import ProductsCard from './ProductsCard';
 import './productsInCart.css';
+import { INITIAL_STATE_PRODUCTSINCART } from '../../services/constants';
 
-const INITIAL_STATE = {
-  total: 0,
-  countItens: 1,
-  buttonDisable: false,
-}
-export default function ProductsInCart({
-  product,
-  countI,
-  removeItens,
-}) {
-  const [productsInCart, setProductsInCart] = useState(INITIAL_STATE)
+export default function ProductsInCart({ product, countI, removeItens }) {
+  const [productsInCart, setProductsInCart] = useState(INITIAL_STATE_PRODUCTSINCART)
   const { countItens, buttonDisable } = productsInCart;
   const { price, available_quantity: quantity } = product
   const { addCartItensToLocalStorage } = useContext(productDetailsContext)
@@ -33,7 +25,6 @@ export default function ProductsInCart({
         ...prevState,
         countItens: prevState.countItens - 1,
       }));
-      
     }
   }
 
@@ -83,11 +74,14 @@ export default function ProductsInCart({
 
         </div>
       </div>
-      <button type="button" onClick={(e) => removeItens(e)} className='remove-cart-item'>x</button>
-
+      <button
+        type="button"
+        onClick={(e) => removeItens(e)}
+        className='remove-cart-item'>
+        x
+      </button>
     </>
   );
-
 }
 ProductsInCart.propTypes = {
   result: PropTypes.shape({

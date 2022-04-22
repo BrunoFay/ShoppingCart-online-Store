@@ -9,7 +9,6 @@ function AddCartButton({ product }) {
     setProductStates,
     productStates: { itensInCart },
   } = useContext(productDetailsContext);
-
   const handleClick = () => {
     addCartItensToLocalStorage(product)
 
@@ -18,8 +17,6 @@ function AddCartButton({ product }) {
       itensInCart
     }));
   }
-
-
   return (
     <>
       <button
@@ -30,8 +27,8 @@ function AddCartButton({ product }) {
       </button>
     </>
   );
-
 }
+
 export default AddCartButton;
 AddCartButton.propTypes = {
   product: PropTypes.object,
