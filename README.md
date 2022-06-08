@@ -22,7 +22,7 @@ I decided to refactor the first version of this project. The code at some points
 
 ## To view a video of the project v2, click on the image below !
 
-[![Watch the video](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvX7XjW8SbO7M8RFY41EYr8WtFq9QouZ7L5A&usqp=CAU)](https://youtu.be/Q-QUjtGJ4UY)
+[![Watch the video](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvX7XjW8SbO7M8RFY41EYr8WtFq9QouZ7L5A&usqp=CAU)](https://youtu.be/I2AmylOuXlY)
 
 ## To view the project in action, click on the link below !
 
